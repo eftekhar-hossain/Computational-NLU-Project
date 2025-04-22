@@ -6,3 +6,4 @@ vllm
 torch
 transformers
 accelerate
+openpyxl
