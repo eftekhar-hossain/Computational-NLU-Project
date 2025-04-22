@@ -11,9 +11,9 @@
 
 # Instructions
 
-- To run the script you need to  install `Python=3.10.x`. For LLM inference both `vLLM` and Huggingface `Pipeline` has been used. 
+- To run the script you need to  install `Python=3.10.x`. For LLM inference, both [vLLM](https://docs.vllm.ai/en/stable/index.html) and Huggingface `Pipeline` has been used. 
 
-- If your are using any IDE then first clone (`git clone <url>`) the repository. Then create a virtual environment and activate it.
+- If you are using any IDE, then first clone (`git clone <url>`) the repository. Then create a virtual environment and activate it.
 
   ```
   conda create -n NLU Python=3.10.12 
@@ -26,7 +26,7 @@
   ```
 ## Evaluated LLMs
 
-We downloaded the instruct version of the models from Huggingface Library.
+We downloaded the instruct version of the models from the Huggingface Library.
 
 - [Llama-3.2-3B](https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct)
 - [Mistral-V3-7B](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
@@ -41,7 +41,7 @@ Prompts for each task are organized in the `Prompts` folder.
 
 ## LLM inference (Examples)
 
-To get **Llama** model response with **Zero-Shot** prompting for any task run the following script. If you are not in the `Scripts` folder.
+To get the **Llama** model response with **Zero-Shot** prompting for any task, run the following script. If you are not in the `Scripts` folder.
 
 ```
 cd Scripts
@@ -53,7 +53,7 @@ python zero_few_shot.py \
 --prompt_type zero              # zero shot prompting
 ```
 
-To get **Qwen** model response with **Few-Shot** prompting for any task, run the following script. If you are not in the `Scripts` folder.
+To get the **Qwen** model response with **Few-Shot** prompting for any task, run the following script. If you are not in the `Scripts` folder.
 
 ```
 cd Scripts
