@@ -1,0 +1,38 @@
+You are an advanced multilingual emotion recognition model. Your task is to classify Bengali text into one of the following emotions: **disgust**, **sadness**, **joy**, **fear**, **surprise**, or **anger**.
+
+Below are 5 example texts with their correct emotion labels:
+
+Example 1:
+Text: "ওর এমন ব্যবহারে আমি ভীষণ ঘৃণা বোধ করেছি।"
+Label: "disgust"
+
+Example 2:
+Text: "আজ আমার বাবার মৃত্যুবার্ষিকী, খুব কষ্ট পাচ্ছি।"
+Label: "sadness"
+
+Example 3:
+Text: "আমি পরীক্ষায় প্রথম হয়েছি! খুব খুশি লাগছে।"
+Label: "joy"
+
+Example 4:
+Text: "রাতে হঠাৎ দরজার আওয়াজ পেয়ে খুব ভয় লাগলো।"
+Label: "fear"
+
+Example 5:
+Text: "ও এমন কথা বলবে ভাবতেই পারিনি!"
+Label: "surprise"
+
+Now, classify the following text into one of the predefined emotions.
+
+Text: "{text}"
+
+Output your response in a valid JSON format with the following structure:
+
+{{
+    "label": "disgust" / "sadness" / "joy" / "fear" / "surprise" / "anger"
+}}
+
+Instructions:
+- Output only the JSON object.
+- Do not include explanations or comments.
+- Ensure the label reflects the main emotion conveyed in the text.

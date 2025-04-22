@@ -1,0 +1,38 @@
+You are an advanced multilingual hate speech detection model. Your task is to classify Bengali text as either **"hate"** or **"not-hate"**.
+
+Below are 5 example texts with their correct hate speech labels:
+
+Example 1:  
+Text: "এই মানুষগুলো সব কুচক্রি, এদের দেশ থেকে তাড়ানো উচিত।"  
+Label: "hate"
+
+Example 2:  
+Text: "আজকে অনেক গরম পড়েছে, বাইরে যাওয়া কঠিন।"  
+Label: "not-hate"
+
+Example 3:  
+Text: "ওরা একেবারে অকর্মা, সমাজের বোঝা মাত্র!"  
+Label: "hate"
+
+Example 4:  
+Text: "তোমার বক্তব্যটা শুনে ভালো লাগলো, অনেক কিছু শিখলাম।"  
+Label: "not-hate"
+
+Example 5:  
+Text: "এমন লোকদের দেখলেই রাগ ধরে, এদের পেটাতে ইচ্ছে করে।"  
+Label: "hate"
+
+Now, analyze the following text and classify it as "hate" or "not-hate":
+
+Text: "{text}"
+
+Output your response in a valid JSON format with the following structure:
+
+{{
+    "label": "hate" / "not-hate"
+}}
+
+Instructions:
+- Output only the JSON object.
+- Do not include explanations or comments.
+- Ensure that the classification is based strictly on the presence of hateful, offensive, or harmful language.

@@ -1,0 +1,1080 @@
+Sun Apr 13 12:13:42 EDT 2025
+Slurm nodes: evc49
+You were assigned 1 gpu(s)
+
+Currently Loaded Modules:
+  1) anaconda/anaconda-2023.09   2) cuda/cuda-12.4.0
+
+ 
+
+	[4mGPU0	NIC0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NODE	1,33	1		N/A
+NIC0	NODE	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+
+Sun Apr 13 12:13:48 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.127.08             Driver Version: 550.127.08     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 PCIe               Off |   00000000:CA:00.0 Off |                    0 |
+| N/A   37C    P0             77W /  310W |       1MiB /  81559MiB |      3%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Start:
+INFO 04-13 12:17:16 [__init__.py:239] Automatically detected platform cuda.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.38s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.07s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.11s/it]
+Device set to use cuda
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+--------------------------------------
+Few Shot Fake News Detection:
+LLM: deepseek-8B
+--------------------------------------
+Sample: 0
+real
+Sample: 1
+real
+Sample: 2
+real
+Sample: 3
+real
+Sample: 4
+real
+Sample: 5
+real
+Sample: 6
+fake
+Sample: 7
+fake
+Sample: 8
+real
+Sample: 9
+real
+Sample: 10
+fake
+Sample: 11
+real
+Sample: 12
+fake
+Sample: 13
+fake
+Sample: 14
+fake
+Sample: 15
+real
+Sample: 16
+fake
+Sample: 17
+fake
+Sample: 18
+real
+Sample: 19
+real
+Sample: 20
+real
+Sample: 21
+real
+Sample: 22
+real
+Sample: 23
+real
+Sample: 24
+fake
+Sample: 25
+real
+Sample: 26
+real
+Sample: 27
+real
+Sample: 28
+real
+Sample: 29
+real
+Sample: 30
+real
+Sample: 31
+fake
+Sample: 32
+real
+Sample: 33
+real
+Sample: 34
+fake
+Sample: 35
+real
+Sample: 36
+real
+Sample: 37
+real
+Sample: 38
+fake
+Sample: 39
+real
+Sample: 40
+real
+Sample: 41
+real
+Sample: 42
+fake
+Sample: 43
+real
+Sample: 44
+real
+Sample: 45
+real
+Sample: 46
+real
+Sample: 47
+fake
+Sample: 48
+real
+Sample: 49
+real
+Sample: 50
+fake
+Sample: 51
+fake
+Sample: 52
+real
+Sample: 53
+fake
+Sample: 54
+real
+Sample: 55
+fake
+Sample: 56
+real
+Sample: 57
+real
+Sample: 58
+real
+Sample: 59
+real
+Sample: 60
+real
+Sample: 61
+real
+Sample: 62
+real
+Sample: 63
+fake
+Sample: 64
+real
+Sample: 65
+real
+Sample: 66
+fake
+Sample: 67
+fake
+Sample: 68
+real
+Sample: 69
+real
+Sample: 70
+fake
+Sample: 71
+real
+Sample: 72
+real
+Sample: 73
+real
+Sample: 74
+real
+Sample: 75
+fake
+Sample: 76
+real
+Sample: 77
+real
+Sample: 78
+fake
+Sample: 79
+real
+Sample: 80
+fake
+Sample: 81
+fake
+Sample: 82
+real
+Sample: 83
+fake
+Sample: 84
+fake
+Sample: 85
+real
+Sample: 86
+real
+Sample: 87
+fake
+Sample: 88
+real
+Sample: 89
+real
+Sample: 90
+real
+Sample: 91
+fake
+Sample: 92
+fake
+Sample: 93
+real
+Sample: 94
+fake
+Sample: 95
+fake
+Sample: 96
+real
+Sample: 97
+real
+Sample: 98
+real
+Sample: 99
+real
+Sample: 100
+real
+Sample: 101
+real
+Sample: 102
+fake
+Sample: 103
+real
+Sample: 104
+real
+Sample: 105
+real
+Sample: 106
+real
+Sample: 107
+real
+Sample: 108
+real
+Sample: 109
+fake
+Sample: 110
+fake
+Sample: 111
+real
+Sample: 112
+real
+Sample: 113
+real
+Sample: 114
+real
+Sample: 115
+fake
+Sample: 116
+fake
+Sample: 117
+real
+Sample: 118
+real
+Sample: 119
+real
+Sample: 120
+real
+Sample: 121
+real
+Sample: 122
+real
+Sample: 123
+real
+Sample: 124
+real
+Sample: 125
+real
+Sample: 126
+real
+Sample: 127
+real
+Sample: 128
+fake
+Sample: 129
+real
+Sample: 130
+real
+Sample: 131
+real
+Sample: 132
+fake
+Sample: 133
+real
+Sample: 134
+real
+Sample: 135
+real
+Sample: 136
+real
+Sample: 137
+real
+Sample: 138
+fake
+Sample: 139
+fake
+Sample: 140
+real
+Sample: 141
+real
+Sample: 142
+real
+Sample: 143
+fake
+Sample: 144
+fake
+Sample: 145
+real
+Sample: 146
+fake
+Sample: 147
+fake
+Sample: 148
+fake
+Sample: 149
+real
+Sample: 150
+fake
+Sample: 151
+real
+Sample: 152
+real
+Sample: 153
+real
+Sample: 154
+real
+Sample: 155
+fake
+Sample: 156
+real
+Sample: 157
+real
+Sample: 158
+fake
+Sample: 159
+real
+Sample: 160
+real
+Sample: 161
+real
+Sample: 162
+real
+Sample: 163
+real
+Sample: 164
+real
+Sample: 165
+real
+Sample: 166
+real
+Sample: 167
+real
+Sample: 168
+real
+Sample: 169
+real
+Sample: 170
+fake
+Sample: 171
+real
+Sample: 172
+real
+Sample: 173
+real
+Sample: 174
+fake
+Sample: 175
+real
+Sample: 176
+None
+Sample: 177
+real
+Sample: 178
+real
+Sample: 179
+real
+Sample: 180
+real
+Sample: 181
+real
+Sample: 182
+real
+Sample: 183
+real
+Sample: 184
+real
+Sample: 185
+fake
+Sample: 186
+real
+Sample: 187
+real
+Sample: 188
+real
+Sample: 189
+real
+Sample: 190
+real
+Sample: 191
+real
+Sample: 192
+real
+Sample: 193
+real
+Sample: 194
+fake
+Sample: 195
+fake
+Sample: 196
+real
+Sample: 197
+fake
+Sample: 198
+real
+Sample: 199
+fake
+Sample: 200
+real
+Sample: 201
+real
+Sample: 202
+fake
+Sample: 203
+real
+Sample: 204
+real
+Sample: 205
+fake
+Sample: 206
+fake
+Sample: 207
+real
+Sample: 208
+real
+Sample: 209
+real
+Sample: 210
+real
+Sample: 211
+real
+Sample: 212
+fake
+Sample: 213
+real
+Sample: 214
+real
+Sample: 215
+real
+Sample: 216
+real
+Sample: 217
+real
+Sample: 218
+fake
+Sample: 219
+real
+Sample: 220
+real
+Sample: 221
+real
+Sample: 222
+real
+Sample: 223
+real
+Sample: 224
+real
+Sample: 225
+real
+Sample: 226
+fake
+Sample: 227
+fake
+Sample: 228
+real
+Sample: 229
+real
+Sample: 230
+real
+Sample: 231
+real
+Sample: 232
+fake
+Sample: 233
+real
+Sample: 234
+real
+Sample: 235
+real
+Sample: 236
+real
+Sample: 237
+fake
+Sample: 238
+real
+Sample: 239
+real
+Sample: 240
+real
+Sample: 241
+real
+Sample: 242
+real
+Sample: 243
+real
+Sample: 244
+real
+Sample: 245
+real
+Sample: 246
+real
+Sample: 247
+fake
+Sample: 248
+real
+Sample: 249
+fake
+Sample: 250
+real
+Sample: 251
+fake
+Sample: 252
+real
+Sample: 253
+fake
+Sample: 254
+real
+Sample: 255
+real
+Sample: 256
+real
+Sample: 257
+fake
+Sample: 258
+real
+Sample: 259
+real
+Sample: 260
+real
+Sample: 261
+real
+Sample: 262
+real
+Sample: 263
+real
+Sample: 264
+real
+Sample: 265
+real
+Sample: 266
+real
+Sample: 267
+fake
+Sample: 268
+real
+Sample: 269
+real
+Sample: 270
+real
+Sample: 271
+real
+Sample: 272
+real
+Sample: 273
+fake
+Sample: 274
+fake
+Sample: 275
+real
+Sample: 276
+fake
+Sample: 277
+real
+Sample: 278
+real
+Sample: 279
+real
+Sample: 280
+real
+Sample: 281
+real
+Sample: 282
+fake
+Sample: 283
+real
+Sample: 284
+fake
+Sample: 285
+fake
+Sample: 286
+fake
+Sample: 287
+fake
+Sample: 288
+real
+Sample: 289
+real
+Sample: 290
+real
+Sample: 291
+real
+Sample: 292
+real
+Sample: 293
+real
+Sample: 294
+real
+Sample: 295
+real
+Sample: 296
+real
+Sample: 297
+real
+Sample: 298
+real
+Sample: 299
+real
+Sample: 300
+real
+Sample: 301
+fake
+Sample: 302
+real
+Sample: 303
+None
+Sample: 304
+real
+Sample: 305
+fake
+Sample: 306
+real
+Sample: 307
+fake
+Sample: 308
+fake
+Sample: 309
+real
+Sample: 310
+fake
+Sample: 311
+real
+Sample: 312
+fake
+Sample: 313
+real
+Sample: 314
+real
+Sample: 315
+fake
+Sample: 316
+real
+Sample: 317
+real
+Sample: 318
+fake
+Sample: 319
+real
+Sample: 320
+real
+Sample: 321
+fake
+Sample: 322
+real
+Sample: 323
+real
+Sample: 324
+real
+Sample: 325
+real
+Sample: 326
+real
+Sample: 327
+real
+Sample: 328
+fake
+Sample: 329
+real
+Sample: 330
+real
+Sample: 331
+fake
+Sample: 332
+fake
+Sample: 333
+real
+Sample: 334
+real
+Sample: 335
+real
+Sample: 336
+fake
+Sample: 337
+fake
+Sample: 338
+fake
+Sample: 339
+real
+Sample: 340
+real
+Sample: 341
+real
+Sample: 342
+fake
+Sample: 343
+fake
+Sample: 344
+real
+Sample: 345
+real
+Sample: 346
+real
+Sample: 347
+real
+Sample: 348
+real
+Sample: 349
+real
+Sample: 350
+real
+Sample: 351
+real
+Sample: 352
+real
+Sample: 353
+real
+Sample: 354
+real
+Sample: 355
+real
+Sample: 356
+real
+Sample: 357
+real
+Sample: 358
+real
+Sample: 359
+real
+Sample: 360
+fake
+Sample: 361
+real
+Sample: 362
+real
+Sample: 363
+real
+Sample: 364
+fake
+Sample: 365
+real
+Sample: 366
+real
+Sample: 367
+real
+Sample: 368
+fake
+Sample: 369
+real
+Sample: 370
+real
+Sample: 371
+real
+Sample: 372
+real
+Sample: 373
+real
+Sample: 374
+real
+Sample: 375
+fake
+Sample: 376
+real
+Sample: 377
+fake
+Sample: 378
+real
+Sample: 379
+real
+Sample: 380
+real
+Sample: 381
+real
+Sample: 382
+real
+Sample: 383
+fake
+Sample: 384
+real
+Sample: 385
+fake
+Sample: 386
+fake
+Sample: 387
+real
+Sample: 388
+real
+Sample: 389
+real
+Sample: 390
+real
+Sample: 391
+fake
+Sample: 392
+real
+Sample: 393
+fake
+Sample: 394
+real
+Sample: 395
+fake
+Sample: 396
+real
+Sample: 397
+real
+Sample: 398
+real
+Sample: 399
+fake
+Sample: 400
+real
+Sample: 401
+real
+Sample: 402
+real
+Sample: 403
+real
+Sample: 404
+real
+Sample: 405
+fake
+Sample: 406
+fake
+Sample: 407
+real
+Sample: 408
+real
+Sample: 409
+fake
+Sample: 410
+real
+Sample: 411
+real
+Sample: 412
+real
+Sample: 413
+real
+Sample: 414
+real
+Sample: 415
+fake
+Sample: 416
+real
+Sample: 417
+real
+Sample: 418
+real
+Sample: 419
+real
+Sample: 420
+real
+Sample: 421
+real
+Sample: 422
+fake
+Sample: 423
+fake
+Sample: 424
+real
+Sample: 425
+real
+Sample: 426
+real
+Sample: 427
+real
+Sample: 428
+real
+Sample: 429
+real
+Sample: 430
+fake
+Sample: 431
+real
+Sample: 432
+fake
+Sample: 433
+fake
+Sample: 434
+real
+Sample: 435
+real
+Sample: 436
+real
+Sample: 437
+real
+Sample: 438
+fake
+Sample: 439
+real
+Sample: 440
+real
+Sample: 441
+fake
+Sample: 442
+fake
+Sample: 443
+real
+Sample: 444
+real
+Sample: 445
+real
+Sample: 446
+fake
+Sample: 447
+fake
+Sample: 448
+real
+Sample: 449
+real
+Sample: 450
+real
+Sample: 451
+real
+Sample: 452
+real
+Sample: 453
+real
+Sample: 454
+real
+Sample: 455
+real
+Sample: 456
+real
+Sample: 457
+real
+Sample: 458
+fake
+Sample: 459
+fake
+Sample: 460
+real
+Sample: 461
+real
+Sample: 462
+real
+Sample: 463
+real
+Sample: 464
+fake
+Sample: 465
+real
+Sample: 466
+fake
+Sample: 467
+fake
+Sample: 468
+real
+Sample: 469
+real
+Sample: 470
+real
+Sample: 471
+real
+Sample: 472
+fake
+Sample: 473
+fake
+Sample: 474
+fake
+Sample: 475
+real
+Sample: 476
+real
+Sample: 477
+None
+Sample: 478
+real
+Sample: 479
+real
+Sample: 480
+real
+Sample: 481
+fake
+Sample: 482
+real
+Sample: 483
+real
+Sample: 484
+real
+Sample: 485
+real
+Sample: 486
+real
+Sample: 487
+fake
+Sample: 488
+fake
+Sample: 489
+real
+Sample: 490
+real
+Sample: 491
+real
+Sample: 492
+real
+Sample: 493
+fake
+Sample: 494
+real
+Sample: 495
+real
+Sample: 496
+real
+Sample: 497
+real
+Sample: 498
+real
+Sample: 499
+real
+Sample: 500
+real
+Sample: 501
+fake
+Sample: 502
+fake
+Sample: 503
+fake
+Sample: 504
+real
+Sample: 505
+real
+Sample: 506
+real
+Sample: 507
+real
+
+real	130m18.782s
+user	81m39.999s
+sys	0m23.115s
+
+Ending script...
+Sun Apr 13 14:24:07 EDT 2025

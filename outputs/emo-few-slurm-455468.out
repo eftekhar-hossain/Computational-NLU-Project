@@ -1,0 +1,1964 @@
+Sun Apr 13 01:08:29 EDT 2025
+Slurm nodes: evc49
+You were assigned 1 gpu(s)
+
+Currently Loaded Modules:
+  1) anaconda/anaconda-2023.09   2) cuda/cuda-12.4.0
+
+ 
+
+	[4mGPU0	NIC0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	NODE	1,33	1		N/A
+NIC0	NODE	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+
+Sun Apr 13 01:08:35 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.127.08             Driver Version: 550.127.08     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 PCIe               Off |   00000000:CA:00.0 Off |                    0 |
+| N/A   36C    P0             74W /  310W |       1MiB /  81559MiB |      3%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Start:
+INFO 04-13 01:10:30 [__init__.py:239] Automatically detected platform cuda.
+INFO 04-13 01:11:23 [config.py:600] This model supports multiple tasks: {'reward', 'generate', 'score', 'classify', 'embed'}. Defaulting to 'generate'.
+INFO 04-13 01:11:23 [config.py:1780] Chunked prefill is enabled with max_num_batched_tokens=16384.
+WARNING 04-13 01:11:26 [utils.py:2273] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/getting_started/troubleshooting.html#python-multiprocessing for more information. Reason: CUDA is initialized
+INFO 04-13 01:11:33 [__init__.py:239] Automatically detected platform cuda.
+INFO 04-13 01:11:36 [core.py:61] Initializing a V1 LLM engine (v0.8.3) with config: model='meta-llama/Llama-3.2-3B-Instruct', speculative_config=None, tokenizer='meta-llama/Llama-3.2-3B-Instruct', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=131072, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto,  device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='xgrammar', reasoning_backend=None), observability_config=ObservabilityConfig(show_hidden_metrics=False, otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=None, served_model_name=meta-llama/Llama-3.2-3B-Instruct, num_scheduler_steps=1, multi_step_stream_outputs=True, enable_prefix_caching=True, chunked_prefill_enabled=True, use_async_output_proc=True, disable_mm_preprocessor_cache=False, mm_processor_kwargs=None, pooler_config=None, compilation_config={"level":3,"custom_ops":["none"],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output"],"use_inductor":true,"compile_sizes":[],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[512,504,496,488,480,472,464,456,448,440,432,424,416,408,400,392,384,376,368,360,352,344,336,328,320,312,304,296,288,280,272,264,256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"max_capture_size":512}
+WARNING 04-13 01:11:50 [utils.py:2413] Methods determine_num_available_blocks,device_config,get_cache_block_size_bytes,initialize_cache not implemented in <vllm.v1.worker.gpu_worker.Worker object at 0x1496e026f320>
+INFO 04-13 01:11:51 [parallel_state.py:957] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0
+INFO 04-13 01:11:51 [cuda.py:221] Using Flash Attention backend on V1 engine.
+INFO 04-13 01:11:51 [gpu_model_runner.py:1258] Starting to load model meta-llama/Llama-3.2-3B-Instruct...
+WARNING 04-13 01:11:52 [topk_topp_sampler.py:69] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+INFO 04-13 01:11:52 [weight_utils.py:265] Using model weights format ['*.safetensors']
+INFO 04-13 01:11:55 [weight_utils.py:281] Time spent downloading weights for meta-llama/Llama-3.2-3B-Instruct: 3.727281 seconds
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:01<00:01,  1.70s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:06<00:00,  3.30s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:06<00:00,  3.09s/it]
+
+INFO 04-13 01:12:02 [loader.py:447] Loading weights took 6.17 seconds
+INFO 04-13 01:12:02 [gpu_model_runner.py:1273] Model loading took 6.0160 GiB and 10.892105 seconds
+INFO 04-13 01:12:25 [backends.py:416] Using cache directory: /home/ehossain/.cache/vllm/torch_compile_cache/8cc7ef2a75/rank_0_0 for vLLM's torch.compile
+INFO 04-13 01:12:25 [backends.py:426] Dynamo bytecode transform time: 22.85 s
+INFO 04-13 01:12:26 [backends.py:115] Directly load the compiled graph for shape None from the cache
+INFO 04-13 01:12:33 [monitor.py:33] torch.compile takes 22.85 s in total
+INFO 04-13 01:12:34 [kv_cache_utils.py:578] GPU KV cache size: 555,136 tokens
+INFO 04-13 01:12:34 [kv_cache_utils.py:581] Maximum concurrency for 131,072 tokens per request: 4.24x
+INFO 04-13 01:12:51 [gpu_model_runner.py:1608] Graph capturing finished in 17 secs, took 0.57 GiB
+INFO 04-13 01:12:51 [core.py:162] init engine (profile, create kv cache, warmup model) took 49.15 seconds
+--------------------------------------
+Few Shot Emotion Recognition:
+LLM: llama32-3B
+--------------------------------------
+Sample: 0
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:01<00:00,  1.24s/it, est. speed input: 666.33 toks/s, output: 7.28 toks/s]Processed prompts: 100%|██████████| 1/1 [00:01<00:00,  1.24s/it, est. speed input: 666.33 toks/s, output: 7.28 toks/s]
+disgust
+Sample: 1
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.63it/s, est. speed input: 14583.11 toks/s, output: 130.51 toks/s]
+none
+Sample: 2
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.28it/s, est. speed input: 13133.46 toks/s, output: 142.06 toks/s]
+anger
+Sample: 3
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10233.46 toks/s, output: 144.79 toks/s]
+disgust
+Sample: 4
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.12it/s, est. speed input: 13104.22 toks/s, output: 136.15 toks/s]
+disgust
+Sample: 5
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.12it/s, est. speed input: 15219.02 toks/s, output: 133.97 toks/s]
+anger
+Sample: 6
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10708.59 toks/s, output: 144.24 toks/s]
+disgust
+Sample: 7
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10895.09 toks/s, output: 144.38 toks/s]
+disgust
+Sample: 8
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.78it/s, est. speed input: 15717.10 toks/s, output: 131.57 toks/s]
+anger
+Sample: 9
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.19it/s, est. speed input: 13811.65 toks/s, output: 137.57 toks/s]
+fear
+Sample: 10
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10138.24 toks/s, output: 144.81 toks/s]
+disgust
+Sample: 11
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.64it/s, est. speed input: 11037.11 toks/s, output: 140.86 toks/s]
+disgust
+Sample: 12
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 9984.66 toks/s, output: 143.28 toks/s]
+disgust
+Sample: 13
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 10818.74 toks/s, output: 144.22 toks/s]
+disgust
+Sample: 14
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.61it/s, est. speed input: 11639.60 toks/s, output: 140.58 toks/s]
+disgust
+Sample: 15
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.70it/s, est. speed input: 13961.36 toks/s, output: 137.99 toks/s]
+anger
+Sample: 16
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.94it/s, est. speed input: 11084.69 toks/s, output: 143.51 toks/s]
+disgust
+Sample: 17
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.49it/s, est. speed input: 12073.98 toks/s, output: 139.46 toks/s]
+disgust
+Sample: 18
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10718.38 toks/s, output: 144.38 toks/s]
+disgust
+Sample: 19
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.42it/s, est. speed input: 15649.15 toks/s, output: 136.04 toks/s]
+anger
+Sample: 20
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.82it/s, est. speed input: 10864.43 toks/s, output: 142.50 toks/s]
+disgust
+Sample: 21
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 10887.86 toks/s, output: 143.86 toks/s]
+disgust
+Sample: 22
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.55it/s, est. speed input: 11611.20 toks/s, output: 140.05 toks/s]
+disgust
+Sample: 23
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10946.41 toks/s, output: 144.21 toks/s]
+disgust
+Sample: 24
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 9537.79 toks/s, output: 143.27 toks/s]
+disgust
+Sample: 25
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.46it/s, est. speed input: 11992.79 toks/s, output: 139.24 toks/s]
+disgust
+Sample: 26
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10755.00 toks/s, output: 144.44 toks/s]
+disgust
+Sample: 27
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.39it/s, est. speed input: 15063.54 toks/s, output: 135.85 toks/s]
+anger
+Sample: 28
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.71it/s, est. speed input: 13927.36 toks/s, output: 138.06 toks/s]
+joy
+Sample: 29
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.10it/s, est. speed input: 13879.03 toks/s, output: 140.77 toks/s]
+joy
+Sample: 30
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10728.56 toks/s, output: 144.73 toks/s]
+disgust
+Sample: 31
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.92it/s, est. speed input: 11049.07 toks/s, output: 143.46 toks/s]
+fear
+Sample: 32
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.06it/s, est. speed input: 10754.12 toks/s, output: 144.55 toks/s]
+surprise
+Sample: 33
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10053.01 toks/s, output: 144.50 toks/s]
+disgust
+Sample: 34
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.34it/s, est. speed input: 13374.84 toks/s, output: 142.47 toks/s]
+anger
+Sample: 35
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.81it/s, est. speed input: 19149.11 toks/s, output: 126.57 toks/s]
+surprise
+Sample: 36
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.96it/s, est. speed input: 10588.37 toks/s, output: 143.71 toks/s]
+disgust
+Sample: 37
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 10570.65 toks/s, output: 143.24 toks/s]
+disgust
+Sample: 38
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.21it/s, est. speed input: 13495.88 toks/s, output: 141.60 toks/s]
+joy
+Sample: 39
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 9689.81 toks/s, output: 144.82 toks/s]
+disgust
+Sample: 40
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.34it/s, est. speed input: 15855.03 toks/s, output: 135.48 toks/s]
+anger
+Sample: 41
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11260.63 toks/s, output: 141.12 toks/s]
+disgust
+Sample: 42
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.31it/s, est. speed input: 13535.52 toks/s, output: 142.23 toks/s]
+anger
+Sample: 43
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.53it/s, est. speed input: 12404.86 toks/s, output: 139.88 toks/s]
+disgust
+Sample: 44
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.31it/s, est. speed input: 13785.82 toks/s, output: 142.29 toks/s]
+anger
+Sample: 45
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.39it/s, est. speed input: 15507.29 toks/s, output: 135.83 toks/s]
+anger
+Sample: 46
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.23it/s, est. speed input: 13624.42 toks/s, output: 137.94 toks/s]
+sadness
+Sample: 47
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.29it/s, est. speed input: 12598.11 toks/s, output: 138.42 toks/s]
+fear
+Sample: 48
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.87it/s, est. speed input: 12051.16 toks/s, output: 143.01 toks/s]
+surprise
+Sample: 49
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.38it/s, est. speed input: 12605.43 toks/s, output: 142.75 toks/s]
+joy
+Sample: 50
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.39it/s, est. speed input: 13147.90 toks/s, output: 142.87 toks/s]
+anger
+Sample: 51
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.72it/s, est. speed input: 13917.97 toks/s, output: 138.16 toks/s]
+joy
+Sample: 52
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.72it/s, est. speed input: 11235.92 toks/s, output: 141.60 toks/s]
+disgust
+Sample: 53
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s, est. speed input: 12868.10 toks/s, output: 139.17 toks/s]
+disgust
+Sample: 54
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.64it/s, est. speed input: 11553.26 toks/s, output: 140.87 toks/s]
+disgust
+Sample: 55
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.51it/s, est. speed input: 11394.27 toks/s, output: 139.69 toks/s]
+disgust
+Sample: 56
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.53it/s, est. speed input: 12163.78 toks/s, output: 143.79 toks/s]
+joy
+Sample: 57
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.44it/s, est. speed input: 12587.64 toks/s, output: 139.64 toks/s]
+surprise
+Sample: 58
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.19it/s, est. speed input: 9851.79 toks/s, output: 145.80 toks/s]
+disgust
+Sample: 59
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.70it/s, est. speed input: 14096.74 toks/s, output: 137.97 toks/s]
+anger
+Sample: 60
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.94it/s, est. speed input: 11956.59 toks/s, output: 143.59 toks/s]
+surprise
+Sample: 61
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 10286.61 toks/s, output: 145.31 toks/s]
+disgust
+Sample: 62
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.92it/s, est. speed input: 11172.06 toks/s, output: 143.40 toks/s]
+disgust
+Sample: 63
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10091.13 toks/s, output: 144.82 toks/s]
+disgust
+Sample: 64
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.96it/s, est. speed input: 11163.52 toks/s, output: 143.71 toks/s]
+disgust
+Sample: 65
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.04it/s, est. speed input: 10997.01 toks/s, output: 144.43 toks/s]
+fear
+Sample: 66
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 11114.83 toks/s, output: 143.90 toks/s]
+disgust
+Sample: 67
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.60it/s, est. speed input: 10520.41 toks/s, output: 140.44 toks/s]
+disgust
+Sample: 68
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.51it/s, est. speed input: 11826.13 toks/s, output: 139.65 toks/s]
+disgust
+Sample: 69
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.18it/s, est. speed input: 12978.38 toks/s, output: 137.49 toks/s]
+sadness
+Sample: 70
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.42it/s, est. speed input: 11589.50 toks/s, output: 138.86 toks/s]
+disgust
+Sample: 71
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.03it/s, est. speed input: 10503.49 toks/s, output: 144.34 toks/s]
+fear
+Sample: 72
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10291.90 toks/s, output: 144.70 toks/s]
+disgust
+Sample: 73
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.60it/s, est. speed input: 11240.35 toks/s, output: 140.47 toks/s]
+disgust
+Sample: 74
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.15it/s, est. speed input: 14080.74 toks/s, output: 141.17 toks/s]
+anger
+Sample: 75
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.30it/s, est. speed input: 12915.78 toks/s, output: 138.48 toks/s]
+sadness
+Sample: 76
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 9696.15 toks/s, output: 145.17 toks/s]
+disgust
+Sample: 77
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.77it/s, est. speed input: 12237.11 toks/s, output: 142.26 toks/s]
+surprise
+Sample: 78
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.98it/s, est. speed input: 11176.12 toks/s, output: 143.94 toks/s]
+sadness
+Sample: 79
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10790.76 toks/s, output: 144.27 toks/s]
+disgust
+Sample: 80
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.94it/s, est. speed input: 10797.44 toks/s, output: 143.51 toks/s]
+disgust
+Sample: 81
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.96it/s, est. speed input: 10287.60 toks/s, output: 143.74 toks/s]
+disgust
+Sample: 82
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.27it/s, est. speed input: 13018.76 toks/s, output: 138.27 toks/s]
+surprise
+Sample: 83
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.84it/s, est. speed input: 12034.28 toks/s, output: 142.81 toks/s]
+fear
+Sample: 84
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 9859.95 toks/s, output: 145.21 toks/s]
+disgust
+Sample: 85
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10090.93 toks/s, output: 144.82 toks/s]
+disgust
+Sample: 86
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.00it/s, est. speed input: 11171.26 toks/s, output: 144.11 toks/s]
+surprise
+Sample: 87
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10649.36 toks/s, output: 144.53 toks/s]
+disgust
+Sample: 88
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.67it/s, est. speed input: 14827.40 toks/s, output: 133.40 toks/s]
+neither
+Sample: 89
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10768.45 toks/s, output: 143.98 toks/s]
+disgust
+Sample: 90
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.63it/s, est. speed input: 11247.89 toks/s, output: 140.77 toks/s]
+disgust
+Sample: 91
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.95it/s, est. speed input: 11186.64 toks/s, output: 143.59 toks/s]
+disgust
+Sample: 92
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.93it/s, est. speed input: 14495.58 toks/s, output: 134.47 toks/s]
+disgust
+Sample: 93
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.96it/s, est. speed input: 10447.30 toks/s, output: 143.74 toks/s]
+disgust
+Sample: 94
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 9793.86 toks/s, output: 145.18 toks/s]
+disgust
+Sample: 95
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.88it/s, est. speed input: 10936.08 toks/s, output: 143.03 toks/s]
+disgust
+Sample: 96
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.39it/s, est. speed input: 12928.41 toks/s, output: 139.17 toks/s]
+surprise
+Sample: 97
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10839.65 toks/s, output: 144.28 toks/s]
+disgust
+Sample: 98
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.66it/s, est. speed input: 11092.19 toks/s, output: 140.97 toks/s]
+disgust
+Sample: 99
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.35it/s, est. speed input: 11996.94 toks/s, output: 142.54 toks/s]
+joy
+Sample: 100
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.42it/s, est. speed input: 11863.92 toks/s, output: 138.82 toks/s]
+disgust
+Sample: 101
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.62it/s, est. speed input: 11142.89 toks/s, output: 140.62 toks/s]
+disgust
+Sample: 102
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10427.49 toks/s, output: 144.36 toks/s]
+disgust
+Sample: 103
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.99it/s, est. speed input: 11144.39 toks/s, output: 144.00 toks/s]
+sadness
+Sample: 104
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10441.90 toks/s, output: 144.55 toks/s]
+disgust
+Sample: 105
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 9986.78 toks/s, output: 144.71 toks/s]
+disgust
+Sample: 106
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.00it/s, est. speed input: 11174.95 toks/s, output: 144.06 toks/s]
+disgust
+Sample: 107
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 11212.37 toks/s, output: 143.31 toks/s]
+disgust
+Sample: 108
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 10692.29 toks/s, output: 143.81 toks/s]
+disgust
+Sample: 109
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.02it/s, est. speed input: 11293.00 toks/s, output: 144.28 toks/s]
+fear
+Sample: 110
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 9792.73 toks/s, output: 145.17 toks/s]
+disgust
+Sample: 111
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 10718.76 toks/s, output: 144.18 toks/s]
+disgust
+Sample: 112
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 10751.83 toks/s, output: 144.18 toks/s]
+disgust
+Sample: 113
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.41it/s, est. speed input: 12564.16 toks/s, output: 142.97 toks/s]
+joy
+Sample: 114
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.65it/s, est. speed input: 11170.06 toks/s, output: 140.97 toks/s]
+disgust
+Sample: 115
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.87it/s, est. speed input: 12511.52 toks/s, output: 133.87 toks/s]
+disgust
+Sample: 116
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.37it/s, est. speed input: 12866.23 toks/s, output: 139.06 toks/s]
+surprise
+Sample: 117
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 10004.84 toks/s, output: 145.20 toks/s]
+disgust
+Sample: 118
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 10793.95 toks/s, output: 143.89 toks/s]
+disgust
+Sample: 119
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10075.36 toks/s, output: 145.29 toks/s]
+disgust
+Sample: 120
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.90it/s, est. speed input: 11949.99 toks/s, output: 143.30 toks/s]
+fear
+Sample: 121
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.78it/s, est. speed input: 14086.11 toks/s, output: 134.28 toks/s]
+neither
+Sample: 122
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.00it/s, est. speed input: 11437.36 toks/s, output: 144.06 toks/s]
+surprise
+Sample: 123
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.10it/s, est. speed input: 13478.68 toks/s, output: 140.79 toks/s]
+joy
+Sample: 124
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.08it/s, est. speed input: 10531.09 toks/s, output: 144.72 toks/s]
+sadness
+Sample: 125
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.93it/s, est. speed input: 11109.11 toks/s, output: 143.42 toks/s]
+disgust
+Sample: 126
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.64it/s, est. speed input: 11034.84 toks/s, output: 140.84 toks/s]
+disgust
+Sample: 127
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.44it/s, est. speed input: 11708.68 toks/s, output: 138.99 toks/s]
+disgust
+Sample: 128
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 9836.57 toks/s, output: 144.15 toks/s]
+disgust
+Sample: 129
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.74it/s, est. speed input: 10885.50 toks/s, output: 141.75 toks/s]
+disgust
+Sample: 130
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.62it/s, est. speed input: 11178.89 toks/s, output: 140.68 toks/s]
+disgust
+Sample: 131
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10148.96 toks/s, output: 144.72 toks/s]
+disgust
+Sample: 132
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 10972.36 toks/s, output: 143.92 toks/s]
+disgust
+Sample: 133
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10722.70 toks/s, output: 144.00 toks/s]
+disgust
+Sample: 134
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.56it/s, est. speed input: 11301.58 toks/s, output: 140.07 toks/s]
+disgust
+Sample: 135
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.97it/s, est. speed input: 11597.20 toks/s, output: 143.81 toks/s]
+sadness
+Sample: 136
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10120.25 toks/s, output: 145.23 toks/s]
+disgust
+Sample: 137
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.07it/s, est. speed input: 14142.66 toks/s, output: 140.59 toks/s]
+anger
+Sample: 138
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.94it/s, est. speed input: 10783.83 toks/s, output: 143.54 toks/s]
+disgust
+Sample: 139
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.75it/s, est. speed input: 11969.21 toks/s, output: 150.84 toks/s]
+disgust
+Sample: 140
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.04it/s, est. speed input: 13270.59 toks/s, output: 135.39 toks/s]
+disgust
+Sample: 141
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10432.23 toks/s, output: 144.86 toks/s]
+disgust
+Sample: 142
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.64it/s, est. speed input: 13878.07 toks/s, output: 137.56 toks/s]
+none
+Sample: 143
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.95it/s, est. speed input: 11049.91 toks/s, output: 143.67 toks/s]
+disgust
+Sample: 144
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s, est. speed input: 11443.83 toks/s, output: 139.15 toks/s]
+disgust
+Sample: 145
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.36it/s, est. speed input: 15425.36 toks/s, output: 135.62 toks/s]
+joy
+Sample: 146
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.84it/s, est. speed input: 11874.55 toks/s, output: 142.82 toks/s]
+fear
+Sample: 147
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10025.11 toks/s, output: 145.26 toks/s]
+disgust
+Sample: 148
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.95it/s, est. speed input: 11111.71 toks/s, output: 143.66 toks/s]
+disgust
+Sample: 149
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.47it/s, est. speed input: 14943.47 toks/s, output: 136.35 toks/s]
+anger
+Sample: 150
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10007.00 toks/s, output: 145.00 toks/s]
+disgust
+Sample: 151
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.89it/s, est. speed input: 14822.81 toks/s, output: 134.05 toks/s]
+disgust
+Sample: 152
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.25it/s, est. speed input: 13559.70 toks/s, output: 141.84 toks/s]
+none
+Sample: 153
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.22it/s, est. speed input: 11180.82 toks/s, output: 164.12 toks/s]
+disgust
+Sample: 154
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.44it/s, est. speed input: 12563.13 toks/s, output: 143.19 toks/s]
+joy
+Sample: 155
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.91it/s, est. speed input: 11256.84 toks/s, output: 143.37 toks/s]
+surprise
+Sample: 156
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.16it/s, est. speed input: 9994.10 toks/s, output: 145.51 toks/s]
+disgust
+Sample: 157
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.32it/s, est. speed input: 13341.33 toks/s, output: 142.32 toks/s]
+anger
+Sample: 158
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10208.34 toks/s, output: 145.11 toks/s]
+disgust
+Sample: 159
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.24it/s, est. speed input: 13919.76 toks/s, output: 141.80 toks/s]
+joy
+Sample: 160
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.49it/s, est. speed input: 12121.64 toks/s, output: 139.49 toks/s]
+disgust
+Sample: 161
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 9859.72 toks/s, output: 145.20 toks/s]
+disgust
+Sample: 162
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 10273.52 toks/s, output: 145.12 toks/s]
+disgust
+Sample: 163
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.88it/s, est. speed input: 10583.45 toks/s, output: 142.99 toks/s]
+disgust
+Sample: 164
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10788.62 toks/s, output: 144.25 toks/s]
+disgust
+Sample: 165
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.75it/s, est. speed input: 17923.01 toks/s, output: 131.34 toks/s]
+anger
+Sample: 166
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.95it/s, est. speed input: 11584.44 toks/s, output: 143.65 toks/s]
+fear
+Sample: 167
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.19it/s, est. speed input: 9658.10 toks/s, output: 145.81 toks/s]
+disgust
+Sample: 168
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.34it/s, est. speed input: 15117.09 toks/s, output: 135.46 toks/s]
+none
+Sample: 169
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 9678.03 toks/s, output: 145.38 toks/s]
+disgust
+Sample: 170
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10322.60 toks/s, output: 144.68 toks/s]
+disgust
+Sample: 171
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.40it/s, est. speed input: 12788.69 toks/s, output: 138.65 toks/s]
+disgust
+Sample: 172
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.96it/s, est. speed input: 10943.93 toks/s, output: 143.76 toks/s]
+disgust
+Sample: 173
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.05it/s, est. speed input: 11056.52 toks/s, output: 144.50 toks/s]
+fear
+Sample: 174
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 9591.70 toks/s, output: 145.30 toks/s]
+disgust
+Sample: 175
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s, est. speed input: 12371.12 toks/s, output: 139.15 toks/s]
+disgust
+Sample: 176
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.54it/s, est. speed input: 13785.35 toks/s, output: 136.84 toks/s]
+joy
+Sample: 177
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.25it/s, est. speed input: 14109.54 toks/s, output: 141.87 toks/s]
+joy
+Sample: 178
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10899.83 toks/s, output: 144.02 toks/s]
+disgust
+Sample: 179
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10900.34 toks/s, output: 144.45 toks/s]
+disgust
+Sample: 180
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.13it/s, est. speed input: 13979.15 toks/s, output: 136.28 toks/s]
+disgust
+Sample: 181
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.40it/s, est. speed input: 12922.20 toks/s, output: 142.86 toks/s]
+joy
+Sample: 182
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 11166.57 toks/s, output: 144.16 toks/s]
+disgust
+Sample: 183
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.83it/s, est. speed input: 12366.16 toks/s, output: 142.72 toks/s]
+sadness
+Sample: 184
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10609.28 toks/s, output: 144.86 toks/s]
+disgust
+Sample: 185
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.21it/s, est. speed input: 9441.04 toks/s, output: 145.96 toks/s]
+disgust
+Sample: 186
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.64it/s, est. speed input: 11547.27 toks/s, output: 140.79 toks/s]
+disgust
+Sample: 187
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.99it/s, est. speed input: 11610.99 toks/s, output: 143.98 toks/s]
+fear
+Sample: 188
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.68it/s, est. speed input: 14025.93 toks/s, output: 137.86 toks/s]
+joy
+Sample: 189
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.62it/s, est. speed input: 11363.20 toks/s, output: 140.64 toks/s]
+disgust
+Sample: 190
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.30it/s, est. speed input: 13211.14 toks/s, output: 138.49 toks/s]
+surprise
+Sample: 191
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10330.44 toks/s, output: 145.02 toks/s]
+disgust
+Sample: 192
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.66it/s, est. speed input: 11393.95 toks/s, output: 141.02 toks/s]
+disgust
+Sample: 193
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.15it/s, est. speed input: 10179.72 toks/s, output: 145.39 toks/s]
+disgust
+Sample: 194
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.63it/s, est. speed input: 11276.52 toks/s, output: 140.72 toks/s]
+disgust
+Sample: 195
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.30it/s, est. speed input: 13571.76 toks/s, output: 142.18 toks/s]
+anger
+Sample: 196
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.53it/s, est. speed input: 11761.50 toks/s, output: 139.80 toks/s]
+disgust
+Sample: 197
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 10930.91 toks/s, output: 143.80 toks/s]
+disgust
+Sample: 198
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10611.04 toks/s, output: 144.67 toks/s]
+disgust
+Sample: 199
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.31it/s, est. speed input: 13395.66 toks/s, output: 142.25 toks/s]
+anger
+Sample: 200
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.85it/s, est. speed input: 12131.30 toks/s, output: 142.90 toks/s]
+sadness
+Sample: 201
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.80it/s, est. speed input: 9188.39 toks/s, output: 142.31 toks/s]
+disgust
+Sample: 202
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.23it/s, est. speed input: 15072.61 toks/s, output: 134.71 toks/s]
+joy
+Sample: 203
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11819.06 toks/s, output: 139.93 toks/s]
+disgust
+Sample: 204
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10295.35 toks/s, output: 144.51 toks/s]
+disgust
+Sample: 205
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 11019.46 toks/s, output: 143.91 toks/s]
+disgust
+Sample: 206
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.46it/s, est. speed input: 12704.98 toks/s, output: 139.77 toks/s]
+surprise
+Sample: 207
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.64it/s, est. speed input: 11083.91 toks/s, output: 140.87 toks/s]
+disgust
+Sample: 208
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.10it/s, est. speed input: 12994.40 toks/s, output: 135.96 toks/s]
+disgust
+Sample: 209
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10336.87 toks/s, output: 144.88 toks/s]
+disgust
+Sample: 210
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.35it/s, est. speed input: 12933.82 toks/s, output: 142.54 toks/s]
+anger
+Sample: 211
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.84it/s, est. speed input: 12160.82 toks/s, output: 142.83 toks/s]
+sadness
+Sample: 212
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10241.45 toks/s, output: 143.99 toks/s]
+disgust
+Sample: 213
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.48it/s, est. speed input: 14955.91 toks/s, output: 136.46 toks/s]
+anger
+Sample: 214
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.41it/s, est. speed input: 15635.46 toks/s, output: 135.92 toks/s]
+anger
+Sample: 215
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.48it/s, est. speed input: 12333.31 toks/s, output: 139.92 toks/s]
+fear
+Sample: 216
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.45it/s, est. speed input: 12780.54 toks/s, output: 139.65 toks/s]
+fear
+Sample: 217
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.41it/s, est. speed input: 12380.47 toks/s, output: 142.97 toks/s]
+joy
+Sample: 218
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10300.35 toks/s, output: 144.82 toks/s]
+disgust
+Sample: 219
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10396.88 toks/s, output: 144.82 toks/s]
+disgust
+Sample: 220
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.27it/s, est. speed input: 13047.53 toks/s, output: 142.00 toks/s]
+joy
+Sample: 221
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.72it/s, est. speed input: 12486.29 toks/s, output: 150.60 toks/s]
+disgust
+Sample: 222
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.65it/s, est. speed input: 11201.10 toks/s, output: 140.96 toks/s]
+disgust
+Sample: 223
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.48it/s, est. speed input: 12206.75 toks/s, output: 139.39 toks/s]
+disgust
+Sample: 224
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.04it/s, est. speed input: 10852.97 toks/s, output: 144.43 toks/s]
+fear
+Sample: 225
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.24it/s, est. speed input: 13783.55 toks/s, output: 137.98 toks/s]
+surprise
+Sample: 226
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.79it/s, est. speed input: 14670.98 toks/s, output: 134.41 toks/s]
+sadness
+Sample: 227
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.68it/s, est. speed input: 11263.71 toks/s, output: 141.16 toks/s]
+disgust
+Sample: 228
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.02it/s, est. speed input: 14523.93 toks/s, output: 135.29 toks/s]
+disgust
+Sample: 229
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 11048.11 toks/s, output: 144.28 toks/s]
+disgust
+Sample: 230
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 11089.90 toks/s, output: 143.99 toks/s]
+disgust
+Sample: 231
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10932.00 toks/s, output: 144.02 toks/s]
+disgust
+Sample: 232
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10095.97 toks/s, output: 144.89 toks/s]
+disgust
+Sample: 233
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10260.93 toks/s, output: 144.94 toks/s]
+disgust
+Sample: 234
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 10616.88 toks/s, output: 143.23 toks/s]
+disgust
+Sample: 235
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.86it/s, est. speed input: 10503.73 toks/s, output: 142.77 toks/s]
+disgust
+Sample: 236
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.88it/s, est. speed input: 10997.16 toks/s, output: 143.00 toks/s]
+disgust
+Sample: 237
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10741.88 toks/s, output: 144.70 toks/s]
+disgust
+Sample: 238
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 11013.45 toks/s, output: 143.83 toks/s]
+disgust
+Sample: 239
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.26it/s, est. speed input: 13197.24 toks/s, output: 138.16 toks/s]
+neither
+Sample: 240
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11722.19 toks/s, output: 139.89 toks/s]
+disgust
+Sample: 241
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.18it/s, est. speed input: 13494.82 toks/s, output: 141.38 toks/s]
+joy
+Sample: 242
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.16it/s, est. speed input: 13985.72 toks/s, output: 141.23 toks/s]
+anger
+Sample: 243
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.47it/s, est. speed input: 11952.98 toks/s, output: 139.31 toks/s]
+disgust
+Sample: 244
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.74it/s, est. speed input: 11413.92 toks/s, output: 141.97 toks/s]
+fear
+Sample: 245
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.25it/s, est. speed input: 13821.05 toks/s, output: 141.82 toks/s]
+anger
+Sample: 246
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.17it/s, est. speed input: 9773.20 toks/s, output: 145.60 toks/s]
+disgust
+Sample: 247
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.61it/s, est. speed input: 10673.48 toks/s, output: 148.98 toks/s]
+sadness
+Sample: 248
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.58it/s, est. speed input: 11103.14 toks/s, output: 140.32 toks/s]
+disgust
+Sample: 249
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.21it/s, est. speed input: 14097.65 toks/s, output: 141.55 toks/s]
+joy
+Sample: 250
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.18it/s, est. speed input: 9633.11 toks/s, output: 145.68 toks/s]
+disgust
+Sample: 251
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.93it/s, est. speed input: 10875.12 toks/s, output: 143.48 toks/s]
+disgust
+Sample: 252
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10956.63 toks/s, output: 144.35 toks/s]
+disgust
+Sample: 253
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.34it/s, est. speed input: 12601.93 toks/s, output: 142.47 toks/s]
+joy
+Sample: 254
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10838.12 toks/s, output: 144.26 toks/s]
+disgust
+Sample: 255
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.72it/s, est. speed input: 14075.31 toks/s, output: 138.15 toks/s]
+anger
+Sample: 256
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10006.34 toks/s, output: 145.22 toks/s]
+disgust
+Sample: 257
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.19it/s, est. speed input: 14127.41 toks/s, output: 141.44 toks/s]
+joy
+Sample: 258
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.70it/s, est. speed input: 14215.44 toks/s, output: 137.98 toks/s]
+anger
+Sample: 259
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.38it/s, est. speed input: 12731.15 toks/s, output: 139.11 toks/s]
+surprise
+Sample: 260
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.86it/s, est. speed input: 12170.56 toks/s, output: 142.94 toks/s]
+sadness
+Sample: 261
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.56it/s, est. speed input: 11567.77 toks/s, output: 140.09 toks/s]
+disgust
+Sample: 262
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.53it/s, est. speed input: 11980.80 toks/s, output: 139.83 toks/s]
+disgust
+Sample: 263
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.93it/s, est. speed input: 10904.57 toks/s, output: 143.45 toks/s]
+disgust
+Sample: 264
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.62it/s, est. speed input: 11506.23 toks/s, output: 140.67 toks/s]
+disgust
+Sample: 265
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.16it/s, est. speed input: 10108.90 toks/s, output: 145.54 toks/s]
+disgust
+Sample: 266
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10386.11 toks/s, output: 144.22 toks/s]
+disgust
+Sample: 267
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 11123.18 toks/s, output: 144.01 toks/s]
+disgust
+Sample: 268
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.09it/s, est. speed input: 13257.06 toks/s, output: 135.87 toks/s]
+disgust
+Sample: 269
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.23it/s, est. speed input: 13465.28 toks/s, output: 141.70 toks/s]
+anger
+Sample: 270
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.85it/s, est. speed input: 11791.54 toks/s, output: 142.89 toks/s]
+fear
+Sample: 271
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.85it/s, est. speed input: 15390.80 toks/s, output: 133.68 toks/s]
+disgust
+Sample: 272
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.42it/s, est. speed input: 16176.13 toks/s, output: 136.06 toks/s]
+anger
+Sample: 273
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.41it/s, est. speed input: 13323.68 toks/s, output: 143.01 toks/s]
+joy
+Sample: 274
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 9992.02 toks/s, output: 144.55 toks/s]
+disgust
+Sample: 275
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10645.61 toks/s, output: 144.90 toks/s]
+disgust
+Sample: 276
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.49it/s, est. speed input: 12043.65 toks/s, output: 139.47 toks/s]
+disgust
+Sample: 277
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10137.42 toks/s, output: 144.56 toks/s]
+disgust
+Sample: 278
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s, est. speed input: 12613.35 toks/s, output: 139.59 toks/s]
+disgust
+Sample: 279
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 9806.60 toks/s, output: 144.42 toks/s]
+disgust
+Sample: 280
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.89it/s, est. speed input: 11658.51 toks/s, output: 143.24 toks/s]
+sadness
+Sample: 281
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.98it/s, est. speed input: 13596.89 toks/s, output: 134.89 toks/s]
+disgust
+Sample: 282
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11943.16 toks/s, output: 139.93 toks/s]
+disgust
+Sample: 283
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.85it/s, est. speed input: 16355.11 toks/s, output: 132.01 toks/s]
+anger
+Sample: 284
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10459.89 toks/s, output: 145.02 toks/s]
+disgust
+Sample: 285
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.06it/s, est. speed input: 10914.34 toks/s, output: 144.53 toks/s]
+fear
+Sample: 286
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.55it/s, est. speed input: 11733.10 toks/s, output: 140.02 toks/s]
+disgust
+Sample: 287
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.41it/s, est. speed input: 12124.54 toks/s, output: 138.80 toks/s]
+disgust
+Sample: 288
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.21it/s, est. speed input: 13372.54 toks/s, output: 141.58 toks/s]
+anger
+Sample: 289
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.15it/s, est. speed input: 10535.98 toks/s, output: 145.40 toks/s]
+disgust
+Sample: 290
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10615.84 toks/s, output: 144.73 toks/s]
+disgust
+Sample: 291
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10835.13 toks/s, output: 144.44 toks/s]
+disgust
+Sample: 292
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11946.79 toks/s, output: 139.97 toks/s]
+disgust
+Sample: 293
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.09it/s, est. speed input: 10844.08 toks/s, output: 144.80 toks/s]
+surprise
+Sample: 294
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.47it/s, est. speed input: 12555.29 toks/s, output: 139.30 toks/s]
+disgust
+Sample: 295
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.07it/s, est. speed input: 13270.63 toks/s, output: 135.70 toks/s]
+disgust
+Sample: 296
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.15it/s, est. speed input: 9926.85 toks/s, output: 145.48 toks/s]
+disgust
+Sample: 297
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.18it/s, est. speed input: 9811.28 toks/s, output: 145.68 toks/s]
+disgust
+Sample: 298
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.08it/s, est. speed input: 10784.78 toks/s, output: 144.73 toks/s]
+fear
+Sample: 299
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10091.21 toks/s, output: 144.82 toks/s]
+disgust
+Sample: 300
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10842.06 toks/s, output: 144.53 toks/s]
+disgust
+Sample: 301
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.32it/s, est. speed input: 14985.53 toks/s, output: 135.32 toks/s]
+anger
+Sample: 302
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.05it/s, est. speed input: 10965.29 toks/s, output: 144.48 toks/s]
+surprise
+Sample: 303
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 9921.90 toks/s, output: 143.30 toks/s]
+disgust
+Sample: 304
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.47it/s, est. speed input: 14930.93 toks/s, output: 136.41 toks/s]
+anger
+Sample: 305
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.89it/s, est. speed input: 11760.99 toks/s, output: 143.18 toks/s]
+fear
+Sample: 306
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.36it/s, est. speed input: 13167.46 toks/s, output: 142.64 toks/s]
+anger
+Sample: 307
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.48it/s, est. speed input: 14991.14 toks/s, output: 136.42 toks/s]
+joy
+Sample: 308
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.47it/s, est. speed input: 12469.20 toks/s, output: 139.87 toks/s]
+sadness
+Sample: 309
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.91it/s, est. speed input: 15006.45 toks/s, output: 134.23 toks/s]
+disgust
+Sample: 310
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 9995.51 toks/s, output: 145.30 toks/s]
+disgust
+Sample: 311
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.25it/s, est. speed input: 13683.69 toks/s, output: 141.87 toks/s]
+joy
+Sample: 312
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.36it/s, est. speed input: 16101.76 toks/s, output: 135.60 toks/s]
+joy
+Sample: 313
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.29it/s, est. speed input: 12996.23 toks/s, output: 138.41 toks/s]
+sadness
+Sample: 314
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.36it/s, est. speed input: 13370.38 toks/s, output: 142.63 toks/s]
+anger
+Sample: 315
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.42it/s, est. speed input: 15028.68 toks/s, output: 136.06 toks/s]
+anger
+Sample: 316
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s, est. speed input: 12144.28 toks/s, output: 139.56 toks/s]
+disgust
+Sample: 317
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.55it/s, est. speed input: 12118.22 toks/s, output: 143.98 toks/s]
+joy
+Sample: 318
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.26it/s, est. speed input: 13528.77 toks/s, output: 141.94 toks/s]
+joy
+Sample: 319
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.93it/s, est. speed input: 15620.36 toks/s, output: 135.50 toks/s]
+surprise
+Sample: 320
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.56it/s, est. speed input: 10990.49 toks/s, output: 140.08 toks/s]
+disgust
+Sample: 321
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.68it/s, est. speed input: 10148.59 toks/s, output: 150.18 toks/s]
+disgust
+Sample: 322
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s, est. speed input: 12473.07 toks/s, output: 139.60 toks/s]
+disgust
+Sample: 323
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 11022.34 toks/s, output: 144.16 toks/s]
+disgust
+Sample: 324
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.05it/s, est. speed input: 13799.23 toks/s, output: 135.55 toks/s]
+disgust
+Sample: 325
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10507.15 toks/s, output: 145.01 toks/s]
+disgust
+Sample: 326
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10629.24 toks/s, output: 144.70 toks/s]
+disgust
+Sample: 327
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.23it/s, est. speed input: 9435.73 toks/s, output: 146.13 toks/s]
+disgust
+Sample: 328
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.06it/s, est. speed input: 10652.58 toks/s, output: 144.58 toks/s]
+disgust
+Sample: 329
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.36it/s, est. speed input: 12718.23 toks/s, output: 142.63 toks/s]
+joy
+Sample: 330
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.40it/s, est. speed input: 13395.83 toks/s, output: 142.90 toks/s]
+joy
+Sample: 331
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.30it/s, est. speed input: 13752.75 toks/s, output: 142.16 toks/s]
+anger
+Sample: 332
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.99it/s, est. speed input: 11579.86 toks/s, output: 144.04 toks/s]
+sadness
+Sample: 333
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 21.13it/s, est. speed input: 11762.44 toks/s, output: 148.05 toks/s]
+joy
+Sample: 334
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10630.48 toks/s, output: 144.93 toks/s]
+disgust
+Sample: 335
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 14.94it/s, est. speed input: 13443.71 toks/s, output: 134.55 toks/s]
+disgust
+Sample: 336
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.90it/s, est. speed input: 11983.62 toks/s, output: 143.27 toks/s]
+surprise
+Sample: 337
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.24it/s, est. speed input: 13506.14 toks/s, output: 137.96 toks/s]
+surprise
+Sample: 338
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.99it/s, est. speed input: 11124.62 toks/s, output: 143.97 toks/s]
+fear
+Sample: 339
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.77it/s, est. speed input: 11918.92 toks/s, output: 142.28 toks/s]
+fear
+Sample: 340
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.17it/s, est. speed input: 14012.84 toks/s, output: 136.61 toks/s]
+disgust
+Sample: 341
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.06it/s, est. speed input: 11242.26 toks/s, output: 144.56 toks/s]
+sadness
+Sample: 342
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10221.99 toks/s, output: 145.07 toks/s]
+disgust
+Sample: 343
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10534.10 toks/s, output: 144.27 toks/s]
+disgust
+Sample: 344
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.23it/s, est. speed input: 14177.99 toks/s, output: 137.95 toks/s]
+neither
+Sample: 345
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.16it/s, est. speed input: 10124.06 toks/s, output: 145.52 toks/s]
+disgust
+Sample: 346
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.59it/s, est. speed input: 9265.84 toks/s, output: 149.42 toks/s]
+disgust
+Sample: 347
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.12it/s, est. speed input: 13851.76 toks/s, output: 140.90 toks/s]
+joy
+Sample: 348
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.21it/s, est. speed input: 13733.51 toks/s, output: 141.55 toks/s]
+joy
+Sample: 349
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 9762.99 toks/s, output: 144.25 toks/s]
+disgust
+Sample: 350
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11634.99 toks/s, output: 139.96 toks/s]
+disgust
+Sample: 351
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10171.55 toks/s, output: 145.05 toks/s]
+disgust
+Sample: 352
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.26it/s, est. speed input: 13867.61 toks/s, output: 141.88 toks/s]
+joy
+Sample: 353
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 10652.06 toks/s, output: 143.92 toks/s]
+disgust
+Sample: 354
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.84it/s, est. speed input: 10956.11 toks/s, output: 142.67 toks/s]
+disgust
+Sample: 355
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.90it/s, est. speed input: 12178.58 toks/s, output: 143.24 toks/s]
+surprise
+Sample: 356
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 9640.63 toks/s, output: 145.30 toks/s]
+disgust
+Sample: 357
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.47it/s, est. speed input: 12346.78 toks/s, output: 139.87 toks/s]
+sadness
+Sample: 358
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.00it/s, est. speed input: 13268.55 toks/s, output: 135.06 toks/s]
+disgust
+Sample: 359
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10361.30 toks/s, output: 144.32 toks/s]
+disgust
+Sample: 360
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.05it/s, est. speed input: 13678.67 toks/s, output: 135.55 toks/s]
+disgust
+Sample: 361
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10660.85 toks/s, output: 144.47 toks/s]
+disgust
+Sample: 362
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.64it/s, est. speed input: 11454.67 toks/s, output: 140.81 toks/s]
+disgust
+Sample: 363
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 11119.78 toks/s, output: 144.17 toks/s]
+disgust
+Sample: 364
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.92it/s, est. speed input: 15883.79 toks/s, output: 132.49 toks/s]
+joy
+Sample: 365
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.91it/s, est. speed input: 11129.66 toks/s, output: 143.27 toks/s]
+disgust
+Sample: 366
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.14it/s, est. speed input: 13907.18 toks/s, output: 141.05 toks/s]
+anger
+Sample: 367
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.49it/s, est. speed input: 12495.34 toks/s, output: 139.98 toks/s]
+sadness
+Sample: 368
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.40it/s, est. speed input: 12329.94 toks/s, output: 139.29 toks/s]
+surprise
+Sample: 369
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.52it/s, est. speed input: 11805.49 toks/s, output: 139.77 toks/s]
+disgust
+Sample: 370
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.79it/s, est. speed input: 16047.57 toks/s, output: 131.64 toks/s]
+anger
+Sample: 371
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.47it/s, est. speed input: 12323.85 toks/s, output: 139.31 toks/s]
+disgust
+Sample: 372
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10882.39 toks/s, output: 144.21 toks/s]
+disgust
+Sample: 373
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 10580.94 toks/s, output: 143.82 toks/s]
+disgust
+Sample: 374
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.55it/s, est. speed input: 11685.73 toks/s, output: 140.01 toks/s]
+disgust
+Sample: 375
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.68it/s, est. speed input: 11216.39 toks/s, output: 141.15 toks/s]
+disgust
+Sample: 376
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.39it/s, est. speed input: 16150.38 toks/s, output: 135.85 toks/s]
+anger
+Sample: 377
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10626.70 toks/s, output: 144.44 toks/s]
+disgust
+Sample: 378
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 9730.03 toks/s, output: 144.95 toks/s]
+disgust
+Sample: 379
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.54it/s, est. speed input: 11863.13 toks/s, output: 143.88 toks/s]
+anger
+Sample: 380
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.68it/s, est. speed input: 11316.70 toks/s, output: 141.23 toks/s]
+disgust
+Sample: 381
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.70it/s, est. speed input: 11343.13 toks/s, output: 141.37 toks/s]
+disgust
+Sample: 382
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10006.35 toks/s, output: 144.99 toks/s]
+disgust
+Sample: 383
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 11041.01 toks/s, output: 143.78 toks/s]
+disgust
+Sample: 384
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10088.84 toks/s, output: 144.79 toks/s]
+disgust
+Sample: 385
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10210.80 toks/s, output: 144.01 toks/s]
+disgust
+Sample: 386
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10336.16 toks/s, output: 145.09 toks/s]
+disgust
+Sample: 387
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.31it/s, est. speed input: 13458.79 toks/s, output: 142.27 toks/s]
+anger
+Sample: 388
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 21.19it/s, est. speed input: 12070.28 toks/s, output: 148.45 toks/s]
+anger
+Sample: 389
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.95it/s, est. speed input: 10407.07 toks/s, output: 143.63 toks/s]
+disgust
+Sample: 390
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.83it/s, est. speed input: 12148.77 toks/s, output: 142.68 toks/s]
+sadness
+Sample: 391
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.15it/s, est. speed input: 12677.29 toks/s, output: 136.45 toks/s]
+disgust
+Sample: 392
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10428.75 toks/s, output: 144.81 toks/s]
+disgust
+Sample: 393
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.67it/s, est. speed input: 14491.77 toks/s, output: 137.79 toks/s]
+anger
+Sample: 394
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.41it/s, est. speed input: 12971.80 toks/s, output: 142.96 toks/s]
+joy
+Sample: 395
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 9889.18 toks/s, output: 145.39 toks/s]
+disgust
+Sample: 396
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.85it/s, est. speed input: 12233.86 toks/s, output: 142.85 toks/s]
+surprise
+Sample: 397
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.31it/s, est. speed input: 13168.17 toks/s, output: 138.58 toks/s]
+sadness
+Sample: 398
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.62it/s, est. speed input: 11130.08 toks/s, output: 140.66 toks/s]
+disgust
+Sample: 399
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.34it/s, est. speed input: 13316.80 toks/s, output: 142.50 toks/s]
+anger
+Sample: 400
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.16it/s, est. speed input: 14004.89 toks/s, output: 136.53 toks/s]
+disgust
+Sample: 401
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10667.30 toks/s, output: 144.34 toks/s]
+disgust
+Sample: 402
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.07it/s, est. speed input: 13542.65 toks/s, output: 140.61 toks/s]
+anger
+Sample: 403
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.13it/s, est. speed input: 14158.74 toks/s, output: 136.26 toks/s]
+disgust
+Sample: 404
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.40it/s, est. speed input: 13131.39 toks/s, output: 142.92 toks/s]
+joy
+Sample: 405
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.00it/s, est. speed input: 10518.42 toks/s, output: 144.06 toks/s]
+disgust
+Sample: 406
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.48it/s, est. speed input: 12012.42 toks/s, output: 143.46 toks/s]
+joy
+Sample: 407
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.53it/s, est. speed input: 12445.27 toks/s, output: 139.81 toks/s]
+disgust
+Sample: 408
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.87it/s, est. speed input: 10637.42 toks/s, output: 142.86 toks/s]
+disgust
+Sample: 409
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.69it/s, est. speed input: 11292.36 toks/s, output: 141.32 toks/s]
+disgust
+Sample: 410
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.07it/s, est. speed input: 13583.61 toks/s, output: 135.66 toks/s]
+disgust
+Sample: 411
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.55it/s, est. speed input: 11253.42 toks/s, output: 140.06 toks/s]
+disgust
+Sample: 412
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10873.30 toks/s, output: 144.30 toks/s]
+disgust
+Sample: 413
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 10278.73 toks/s, output: 145.19 toks/s]
+disgust
+Sample: 414
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.28it/s, est. speed input: 12851.16 toks/s, output: 138.34 toks/s]
+fear
+Sample: 415
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.99it/s, est. speed input: 11881.12 toks/s, output: 143.98 toks/s]
+fear
+Sample: 416
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10674.90 toks/s, output: 144.44 toks/s]
+disgust
+Sample: 417
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10216.28 toks/s, output: 144.77 toks/s]
+disgust
+Sample: 418
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.64it/s, est. speed input: 9444.57 toks/s, output: 149.88 toks/s]
+disgust
+Sample: 419
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.15it/s, est. speed input: 14138.87 toks/s, output: 141.15 toks/s]
+anger
+Sample: 420
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10460.46 toks/s, output: 145.03 toks/s]
+disgust
+Sample: 421
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.27it/s, est. speed input: 12962.66 toks/s, output: 141.96 toks/s]
+anger
+Sample: 422
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10694.63 toks/s, output: 144.71 toks/s]
+disgust
+Sample: 423
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.14it/s, est. speed input: 12622.54 toks/s, output: 136.35 toks/s]
+disgust
+Sample: 424
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 9884.64 toks/s, output: 143.92 toks/s]
+disgust
+Sample: 425
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 11060.64 toks/s, output: 144.03 toks/s]
+disgust
+Sample: 426
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10107.53 toks/s, output: 145.29 toks/s]
+disgust
+Sample: 427
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s, est. speed input: 12851.87 toks/s, output: 139.16 toks/s]
+disgust
+Sample: 428
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 9982.10 toks/s, output: 143.94 toks/s]
+disgust
+Sample: 429
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.46it/s, est. speed input: 13014.72 toks/s, output: 139.72 toks/s]
+fear
+Sample: 430
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.00it/s, est. speed input: 11109.93 toks/s, output: 144.05 toks/s]
+disgust
+Sample: 431
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.05it/s, est. speed input: 13238.32 toks/s, output: 135.52 toks/s]
+disgust
+Sample: 432
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 9806.08 toks/s, output: 145.36 toks/s]
+disgust
+Sample: 433
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10332.79 toks/s, output: 145.28 toks/s]
+disgust
+Sample: 434
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.15it/s, est. speed input: 10182.47 toks/s, output: 145.43 toks/s]
+disgust
+Sample: 435
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.19it/s, est. speed input: 12751.89 toks/s, output: 137.64 toks/s]
+fear
+Sample: 436
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10150.59 toks/s, output: 144.98 toks/s]
+disgust
+Sample: 437
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.38it/s, est. speed input: 15281.63 toks/s, output: 135.72 toks/s]
+joy
+Sample: 438
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.13it/s, est. speed input: 12790.54 toks/s, output: 137.13 toks/s]
+surprise
+Sample: 439
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s, est. speed input: 12548.37 toks/s, output: 139.57 toks/s]
+disgust
+Sample: 440
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.65it/s, est. speed input: 11122.48 toks/s, output: 140.96 toks/s]
+disgust
+Sample: 441
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.89it/s, est. speed input: 12156.57 toks/s, output: 143.20 toks/s]
+sadness
+Sample: 442
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.91it/s, est. speed input: 12134.85 toks/s, output: 143.36 toks/s]
+sadness
+Sample: 443
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.36it/s, est. speed input: 12489.30 toks/s, output: 138.93 toks/s]
+surprise
+Sample: 444
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.85it/s, est. speed input: 10819.10 toks/s, output: 142.74 toks/s]
+disgust
+Sample: 445
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.33it/s, est. speed input: 13021.86 toks/s, output: 138.68 toks/s]
+sadness
+Sample: 446
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.12it/s, est. speed input: 12604.19 toks/s, output: 136.15 toks/s]
+disgust
+Sample: 447
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.20it/s, est. speed input: 9727.35 toks/s, output: 145.88 toks/s]
+disgust
+Sample: 448
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.68it/s, est. speed input: 11498.51 toks/s, output: 141.15 toks/s]
+disgust
+Sample: 449
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.34it/s, est. speed input: 13334.70 toks/s, output: 142.47 toks/s]
+joy
+Sample: 450
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.87it/s, est. speed input: 16370.21 toks/s, output: 132.14 toks/s]
+anger
+Sample: 451
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.16it/s, est. speed input: 10155.31 toks/s, output: 145.51 toks/s]
+disgust
+Sample: 452
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 9886.10 toks/s, output: 145.11 toks/s]
+disgust
+Sample: 453
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.68it/s, est. speed input: 11567.44 toks/s, output: 141.23 toks/s]
+disgust
+Sample: 454
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.87it/s, est. speed input: 11820.43 toks/s, output: 143.03 toks/s]
+sadness
+Sample: 455
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 11024.04 toks/s, output: 144.39 toks/s]
+disgust
+Sample: 456
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11134.71 toks/s, output: 139.93 toks/s]
+disgust
+Sample: 457
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.87it/s, est. speed input: 11536.13 toks/s, output: 143.05 toks/s]
+fear
+Sample: 458
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.17it/s, est. speed input: 9629.47 toks/s, output: 145.63 toks/s]
+disgust
+Sample: 459
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.97it/s, est. speed input: 10595.49 toks/s, output: 143.88 toks/s]
+fear
+Sample: 460
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 10559.56 toks/s, output: 144.84 toks/s]
+disgust
+Sample: 461
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.10it/s, est. speed input: 13015.67 toks/s, output: 140.78 toks/s]
+anger
+Sample: 462
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 10992.80 toks/s, output: 143.98 toks/s]
+disgust
+Sample: 463
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.39it/s, est. speed input: 15916.34 toks/s, output: 135.84 toks/s]
+anger
+Sample: 464
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.06it/s, est. speed input: 9564.33 toks/s, output: 144.64 toks/s]
+disgust
+Sample: 465
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11701.82 toks/s, output: 141.15 toks/s]
+disgust
+Sample: 466
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.18it/s, est. speed input: 9636.98 toks/s, output: 145.74 toks/s]
+disgust
+Sample: 467
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.07it/s, est. speed input: 13196.99 toks/s, output: 135.71 toks/s]
+disgust
+Sample: 468
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 11080.94 toks/s, output: 143.88 toks/s]
+disgust
+Sample: 469
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.24it/s, est. speed input: 14200.32 toks/s, output: 138.00 toks/s]
+surprise
+Sample: 470
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.03it/s, est. speed input: 10680.38 toks/s, output: 144.29 toks/s]
+surprise
+Sample: 471
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 10580.31 toks/s, output: 145.13 toks/s]
+disgust
+Sample: 472
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.40it/s, est. speed input: 15413.53 toks/s, output: 135.85 toks/s]
+none
+Sample: 473
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.93it/s, est. speed input: 12168.59 toks/s, output: 143.54 toks/s]
+fear
+Sample: 474
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11195.89 toks/s, output: 141.10 toks/s]
+disgust
+Sample: 475
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.38it/s, est. speed input: 13220.30 toks/s, output: 142.77 toks/s]
+anger
+Sample: 476
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.90it/s, est. speed input: 10664.71 toks/s, output: 143.23 toks/s]
+disgust
+Sample: 477
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.67it/s, est. speed input: 14157.11 toks/s, output: 137.79 toks/s]
+anger
+Sample: 478
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.77it/s, est. speed input: 12503.00 toks/s, output: 142.25 toks/s]
+sadness
+Sample: 479
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.08it/s, est. speed input: 10200.23 toks/s, output: 144.77 toks/s]
+disgust
+Sample: 480
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.78it/s, est. speed input: 16989.51 toks/s, output: 131.52 toks/s]
+joy
+Sample: 481
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.15it/s, est. speed input: 10341.78 toks/s, output: 145.40 toks/s]
+disgust
+Sample: 482
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.60it/s, est. speed input: 10664.15 toks/s, output: 148.86 toks/s]
+gratitude
+Sample: 483
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.93it/s, est. speed input: 10981.69 toks/s, output: 143.42 toks/s]
+disgust
+Sample: 484
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11618.92 toks/s, output: 141.09 toks/s]
+disgust
+Sample: 485
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s, est. speed input: 12135.27 toks/s, output: 139.10 toks/s]
+disgust
+Sample: 486
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.89it/s, est. speed input: 15996.81 toks/s, output: 132.33 toks/s]
+anger
+Sample: 487
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.96it/s, est. speed input: 11005.90 toks/s, output: 143.73 toks/s]
+disgust
+Sample: 488
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10806.14 toks/s, output: 144.27 toks/s]
+disgust
+Sample: 489
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.89it/s, est. speed input: 11052.96 toks/s, output: 143.10 toks/s]
+disgust
+Sample: 490
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.44it/s, est. speed input: 15681.97 toks/s, output: 136.16 toks/s]
+anger
+Sample: 491
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 10144.87 toks/s, output: 144.21 toks/s]
+disgust
+Sample: 492
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.09it/s, est. speed input: 9935.60 toks/s, output: 144.90 toks/s]
+disgust
+Sample: 493
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.47it/s, est. speed input: 12504.88 toks/s, output: 139.26 toks/s]
+disgust
+Sample: 494
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.20it/s, est. speed input: 13704.83 toks/s, output: 141.46 toks/s]
+joy
+Sample: 495
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.03it/s, est. speed input: 13668.79 toks/s, output: 135.31 toks/s]
+disgust
+Sample: 496
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.20it/s, est. speed input: 14013.84 toks/s, output: 137.70 toks/s]
+sadness
+Sample: 497
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.15it/s, est. speed input: 13200.84 toks/s, output: 136.37 toks/s]
+disgust
+Sample: 498
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.93it/s, est. speed input: 10536.01 toks/s, output: 143.43 toks/s]
+disgust
+Sample: 499
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.99it/s, est. speed input: 11200.73 toks/s, output: 143.96 toks/s]
+disgust
+Sample: 500
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 11066.64 toks/s, output: 143.90 toks/s]
+disgust
+Sample: 501
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.93it/s, est. speed input: 10599.93 toks/s, output: 143.43 toks/s]
+disgust
+Sample: 502
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.42it/s, est. speed input: 12734.48 toks/s, output: 143.05 toks/s]
+anger
+Sample: 503
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.79it/s, est. speed input: 10382.94 toks/s, output: 151.18 toks/s]
+disgust
+Sample: 504
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 9978.29 toks/s, output: 145.29 toks/s]
+disgust
+Sample: 505
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.55it/s, est. speed input: 11840.76 toks/s, output: 140.01 toks/s]
+disgust
+Sample: 506
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.03it/s, est. speed input: 11239.37 toks/s, output: 144.29 toks/s]
+fear
+Sample: 507
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.41it/s, est. speed input: 12706.48 toks/s, output: 142.96 toks/s]
+joy
+Sample: 508
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.61it/s, est. speed input: 11343.14 toks/s, output: 140.59 toks/s]
+disgust
+Sample: 509
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.48it/s, est. speed input: 11708.79 toks/s, output: 139.36 toks/s]
+disgust
+Sample: 510
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.49it/s, est. speed input: 12465.80 toks/s, output: 140.03 toks/s]
+sadness
+Sample: 511
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.01it/s, est. speed input: 10563.71 toks/s, output: 144.23 toks/s]
+disgust
+Sample: 512
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.54it/s, est. speed input: 11883.29 toks/s, output: 139.95 toks/s]
+disgust
+Sample: 513
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.19it/s, est. speed input: 9784.75 toks/s, output: 145.76 toks/s]
+disgust
+Sample: 514
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10470.98 toks/s, output: 144.95 toks/s]
+disgust
+Sample: 515
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.18it/s, est. speed input: 9522.50 toks/s, output: 145.72 toks/s]
+disgust
+Sample: 516
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 10639.50 toks/s, output: 144.40 toks/s]
+disgust
+Sample: 517
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.25it/s, est. speed input: 13800.25 toks/s, output: 141.82 toks/s]
+joy
+Sample: 518
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.56it/s, est. speed input: 11770.99 toks/s, output: 140.10 toks/s]
+disgust
+Sample: 519
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.47it/s, est. speed input: 12516.76 toks/s, output: 143.36 toks/s]
+anger
+Sample: 520
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.90it/s, est. speed input: 15999.55 toks/s, output: 132.35 toks/s]
+none
+Sample: 521
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 11081.45 toks/s, output: 144.30 toks/s]
+disgust
+Sample: 522
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 10939.91 toks/s, output: 143.92 toks/s]
+disgust
+Sample: 523
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.09it/s, est. speed input: 13814.65 toks/s, output: 140.72 toks/s]
+anger
+Sample: 524
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.04it/s, est. speed input: 13758.38 toks/s, output: 135.45 toks/s]
+disgust
+Sample: 525
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.05it/s, est. speed input: 13949.10 toks/s, output: 140.46 toks/s]
+anger
+Sample: 526
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.04it/s, est. speed input: 9969.58 toks/s, output: 144.45 toks/s]
+disgust
+Sample: 527
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.85it/s, est. speed input: 10836.85 toks/s, output: 142.77 toks/s]
+disgust
+Sample: 528
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.83it/s, est. speed input: 17787.80 toks/s, output: 131.87 toks/s]
+none
+Sample: 529
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.36it/s, est. speed input: 13063.57 toks/s, output: 142.62 toks/s]
+anger
+Sample: 530
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10629.75 toks/s, output: 144.48 toks/s]
+disgust
+Sample: 531
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.83it/s, est. speed input: 10960.66 toks/s, output: 142.52 toks/s]
+disgust
+Sample: 532
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.05it/s, est. speed input: 10567.10 toks/s, output: 144.51 toks/s]
+disgust
+Sample: 533
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.98it/s, est. speed input: 11573.45 toks/s, output: 143.96 toks/s]
+sadness
+Sample: 534
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.24it/s, est. speed input: 12399.17 toks/s, output: 141.78 toks/s]
+joy
+Sample: 535
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.08it/s, est. speed input: 11127.01 toks/s, output: 144.71 toks/s]
+fear
+Sample: 536
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.42it/s, est. speed input: 12526.48 toks/s, output: 138.81 toks/s]
+disgust
+Sample: 537
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.15it/s, est. speed input: 12777.99 toks/s, output: 136.39 toks/s]
+disgust
+Sample: 538
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.89it/s, est. speed input: 10543.33 toks/s, output: 143.09 toks/s]
+disgust
+Sample: 539
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11340.66 toks/s, output: 141.14 toks/s]
+disgust
+Sample: 540
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.41it/s, est. speed input: 12977.48 toks/s, output: 139.32 toks/s]
+surprise
+Sample: 541
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.92it/s, est. speed input: 15982.12 toks/s, output: 132.52 toks/s]
+anger
+Sample: 542
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.52it/s, est. speed input: 11831.21 toks/s, output: 139.71 toks/s]
+disgust
+Sample: 543
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.28it/s, est. speed input: 13822.56 toks/s, output: 142.05 toks/s]
+anger
+Sample: 544
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 21.55it/s, est. speed input: 11906.38 toks/s, output: 150.94 toks/s]
+joy
+Sample: 545
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.47it/s, est. speed input: 13010.53 toks/s, output: 139.87 toks/s]
+sadness
+Sample: 546
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.27it/s, est. speed input: 13205.20 toks/s, output: 141.95 toks/s]
+joy
+Sample: 547
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.66it/s, est. speed input: 11081.36 toks/s, output: 141.04 toks/s]
+disgust
+Sample: 548
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 9638.93 toks/s, output: 145.04 toks/s]
+disgust
+Sample: 549
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 10561.21 toks/s, output: 145.31 toks/s]
+disgust
+Sample: 550
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10973.13 toks/s, output: 144.35 toks/s]
+disgust
+Sample: 551
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.19it/s, est. speed input: 9590.50 toks/s, output: 145.77 toks/s]
+disgust
+Sample: 552
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.00it/s, est. speed input: 11030.19 toks/s, output: 144.05 toks/s]
+disgust
+Sample: 553
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.50it/s, est. speed input: 11902.34 toks/s, output: 143.61 toks/s]
+joy
+Sample: 554
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11262.11 toks/s, output: 141.14 toks/s]
+disgust
+Sample: 555
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 9849.76 toks/s, output: 145.06 toks/s]
+disgust
+Sample: 556
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10490.11 toks/s, output: 144.99 toks/s]
+disgust
+Sample: 557
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.97it/s, est. speed input: 10849.39 toks/s, output: 143.78 toks/s]
+disgust
+Sample: 558
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.69it/s, est. speed input: 11304.85 toks/s, output: 141.28 toks/s]
+disgust
+Sample: 559
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.94it/s, est. speed input: 11546.34 toks/s, output: 143.62 toks/s]
+fear
+Sample: 560
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10215.86 toks/s, output: 144.99 toks/s]
+disgust
+Sample: 561
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.37it/s, est. speed input: 13438.77 toks/s, output: 142.71 toks/s]
+joy
+Sample: 562
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.17it/s, est. speed input: 12857.21 toks/s, output: 136.59 toks/s]
+disgust
+Sample: 563
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 10227.81 toks/s, output: 145.16 toks/s]
+disgust
+Sample: 564
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.72it/s, est. speed input: 14329.45 toks/s, output: 138.13 toks/s]
+joy
+Sample: 565
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.47it/s, est. speed input: 12247.70 toks/s, output: 139.33 toks/s]
+disgust
+Sample: 566
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s, est. speed input: 12204.33 toks/s, output: 139.54 toks/s]
+disgust
+Sample: 567
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.83it/s, est. speed input: 11974.40 toks/s, output: 142.73 toks/s]
+fear
+Sample: 568
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10233.04 toks/s, output: 145.01 toks/s]
+disgust
+Sample: 569
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.23it/s, est. speed input: 13992.15 toks/s, output: 141.71 toks/s]
+joy
+Sample: 570
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 11159.84 toks/s, output: 144.28 toks/s]
+disgust
+Sample: 571
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 9844.46 toks/s, output: 144.98 toks/s]
+disgust
+Sample: 572
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.39it/s, est. speed input: 13244.05 toks/s, output: 142.81 toks/s]
+anger
+Sample: 573
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.69it/s, est. speed input: 13932.01 toks/s, output: 137.91 toks/s]
+anger
+Sample: 574
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 21.45it/s, est. speed input: 13889.56 toks/s, output: 150.23 toks/s]
+anger
+Sample: 575
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.82it/s, est. speed input: 10414.25 toks/s, output: 142.63 toks/s]
+sadness
+Sample: 576
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.70it/s, est. speed input: 14331.92 toks/s, output: 137.96 toks/s]
+anger
+Sample: 577
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.52it/s, est. speed input: 11089.59 toks/s, output: 139.76 toks/s]
+disgust
+Sample: 578
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.57it/s, est. speed input: 11496.07 toks/s, output: 140.17 toks/s]
+disgust
+Sample: 579
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.74it/s, est. speed input: 12288.61 toks/s, output: 142.03 toks/s]
+sadness
+Sample: 580
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.20it/s, est. speed input: 9518.14 toks/s, output: 145.90 toks/s]
+disgust
+Sample: 581
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.47it/s, est. speed input: 12539.58 toks/s, output: 143.39 toks/s]
+joy
+Sample: 582
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.99it/s, est. speed input: 11759.90 toks/s, output: 144.03 toks/s]
+sadness
+Sample: 583
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.46it/s, est. speed input: 14044.65 toks/s, output: 136.32 toks/s]
+anger
+Sample: 584
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.45it/s, est. speed input: 12478.72 toks/s, output: 139.15 toks/s]
+disgust
+Sample: 585
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.07it/s, est. speed input: 10483.55 toks/s, output: 144.68 toks/s]
+disgust
+Sample: 586
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.14it/s, est. speed input: 10308.39 toks/s, output: 145.38 toks/s]
+disgust
+Sample: 587
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.10it/s, est. speed input: 13610.46 toks/s, output: 135.93 toks/s]
+disgust
+Sample: 588
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.34it/s, est. speed input: 12231.73 toks/s, output: 138.77 toks/s]
+sadness
+Sample: 589
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.55it/s, est. speed input: 11861.90 toks/s, output: 140.06 toks/s]
+disgust
+Sample: 590
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10467.17 toks/s, output: 145.12 toks/s]
+disgust
+Sample: 591
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.06it/s, est. speed input: 11183.78 toks/s, output: 144.58 toks/s]
+disgust
+Sample: 592
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.16it/s, est. speed input: 9705.85 toks/s, output: 145.56 toks/s]
+disgust
+Sample: 593
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.57it/s, est. speed input: 11203.76 toks/s, output: 140.21 toks/s]
+disgust
+Sample: 594
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.11it/s, est. speed input: 10382.90 toks/s, output: 145.07 toks/s]
+disgust
+Sample: 595
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.16it/s, est. speed input: 10201.58 toks/s, output: 145.48 toks/s]
+disgust
+Sample: 596
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.48it/s, est. speed input: 11695.51 toks/s, output: 139.39 toks/s]
+disgust
+Sample: 597
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.49it/s, est. speed input: 12325.57 toks/s, output: 143.52 toks/s]
+joy
+Sample: 598
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.69it/s, est. speed input: 11196.91 toks/s, output: 141.31 toks/s]
+disgust
+Sample: 599
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.51it/s, est. speed input: 14664.85 toks/s, output: 136.65 toks/s]
+anger
+Sample: 600
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.87it/s, est. speed input: 10848.87 toks/s, output: 142.93 toks/s]
+disgust
+Sample: 601
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.35it/s, est. speed input: 12062.84 toks/s, output: 142.58 toks/s]
+joy
+Sample: 602
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 10150.86 toks/s, output: 144.98 toks/s]
+disgust
+Sample: 603
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.65it/s, est. speed input: 11194.46 toks/s, output: 140.88 toks/s]
+disgust
+Sample: 604
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 19.73it/s, est. speed input: 14060.33 toks/s, output: 138.20 toks/s]
+anger
+Sample: 605
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.36it/s, est. speed input: 22354.38 toks/s, output: 121.56 toks/s]
+anger
+Sample: 606
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.03it/s, est. speed input: 10810.68 toks/s, output: 144.33 toks/s]
+disgust
+Sample: 607
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.98it/s, est. speed input: 11857.62 toks/s, output: 143.91 toks/s]
+fear
+Sample: 608
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.13it/s, est. speed input: 10348.61 toks/s, output: 145.27 toks/s]
+disgust
+Sample: 609
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.50it/s, est. speed input: 12144.19 toks/s, output: 139.56 toks/s]
+disgust
+Sample: 610
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.54it/s, est. speed input: 11943.20 toks/s, output: 143.85 toks/s]
+anger
+Sample: 611
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 18.65it/s, est. speed input: 10695.23 toks/s, output: 149.29 toks/s]
+sadness
+Sample: 612
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.98it/s, est. speed input: 10603.95 toks/s, output: 143.91 toks/s]
+disgust
+Sample: 613
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.52it/s, est. speed input: 12070.41 toks/s, output: 139.78 toks/s]
+disgust
+Sample: 614
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 10694.19 toks/s, output: 144.27 toks/s]
+disgust
+Sample: 615
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.10it/s, est. speed input: 9988.16 toks/s, output: 144.96 toks/s]
+disgust
+Sample: 616
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.37it/s, est. speed input: 12809.08 toks/s, output: 139.01 toks/s]
+fear
+Sample: 617
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.67it/s, est. speed input: 11086.09 toks/s, output: 141.10 toks/s]
+disgust
+Sample: 618
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.02it/s, est. speed input: 11111.95 toks/s, output: 144.28 toks/s]
+disgust
+Sample: 619
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.37it/s, est. speed input: 12328.31 toks/s, output: 139.07 toks/s]
+surprise
+Sample: 620
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 16.12it/s, est. speed input: 10212.46 toks/s, output: 145.17 toks/s]
+disgust
+Sample: 621
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 20.57it/s, est. speed input: 12189.09 toks/s, output: 144.09 toks/s]
+joy
+Sample: 622
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.94it/s, est. speed input: 10737.96 toks/s, output: 143.62 toks/s]
+fear
+Sample: 623
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 17.25it/s, est. speed input: 13742.42 toks/s, output: 138.08 toks/s]
+sadness
+Sample: 624
+Processed prompts:   0%|          | 0/1 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s]Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 15.44it/s, est. speed input: 11942.45 toks/s, output: 139.01 toks/s]
+[rank0]:[W413 02:05:36.033440673 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+disgust
+
+real	57m4.020s
+user	1m27.145s
+sys	0m24.205s
+
+Ending script...
+Sun Apr 13 02:05:40 EDT 2025

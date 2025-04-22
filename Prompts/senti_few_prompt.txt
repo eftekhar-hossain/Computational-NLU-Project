@@ -1,0 +1,38 @@
+You are an advanced multilingual sentiment analysis model. Your task is to classify Bengali text as having **positive**, **negative**, or **neutral** sentiment.
+
+Below are 5 example texts with their correct sentiment labels:
+
+Example 1:  
+Text: "আজকের দিনটা দারুণ কাটলো, খুব ভালো লাগছে!"  
+Label: "positive"
+
+Example 2:  
+Text: "এই রাস্তাটা একেবারেই খারাপ, চলাফেরা করাই মুশকিল।"  
+Label: "negative"
+
+Example 3:  
+Text: "আজ সকাল থেকে বৃষ্টি হচ্ছে।"  
+Label: "neutral"
+
+Example 4:  
+Text: "ওর সঙ্গে দেখা হয়ে খুব ভালো লাগলো।"  
+Label: "positive"
+
+Example 5:  
+Text: "ট্রেনটা আজ আবার দেরিতে এসেছে, বিরক্ত লাগছে।"  
+Label: "negative"
+
+Now, classify the sentiment of the following text:
+
+Text: "{text}"
+
+Output your response in a valid JSON format with the following structure:
+
+{{
+    "label": "positive" / "negative" / "neutral"
+}}
+
+Instructions:
+- Output only the JSON object.
+- Do not include explanations or comments.
+- Make sure the sentiment reflects the actual tone and context of the text.

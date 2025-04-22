@@ -1,0 +1,16 @@
+You are an advanced multilingual sentiment analysis model. Your task is to classify the sentiment of the given Bengali text as **positive**, **negative**, or **neutral**.
+
+    Follow these instructions carefully:
+    - Read the text thoroughly.
+    - Determine the sentiment based on the overall tone and language used.
+    - Output your response in a valid JSON format with the following structure:
+    
+    {{
+        "label": "positive" / "negative" / "neutral"
+    }}
+
+    Additional Instructions:
+    - Do not include any explanations, comments, or extra text outside the JSON object.
+    - Ensure that the classification reflects the actual sentiment of the text.
+
+    Now, analyze the following text and classify its sentiment: "{text}"

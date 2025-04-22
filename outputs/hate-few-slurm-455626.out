@@ -1,0 +1,2078 @@
+Sun Apr 13 16:24:12 EDT 2025
+Slurm nodes: evc102
+You were assigned 1 gpu(s)
+
+Currently Loaded Modules:
+  1) anaconda/anaconda-2023.09   2) cuda/cuda-12.4.0
+
+ 
+
+	[4mGPU0	NIC0	NIC1	NIC2	NIC3	NIC4	NIC5	NIC6	NIC7	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	PIX	NODE	NODE	NODE	SYS	SYS	SYS	SYS	0,64	0		N/A
+NIC0	PIX	 X 	NODE	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC1	NODE	NODE	 X 	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC2	NODE	NODE	NODE	 X 	NODE	SYS	SYS	SYS	SYS				
+NIC3	NODE	NODE	NODE	NODE	 X 	SYS	SYS	SYS	SYS				
+NIC4	SYS	SYS	SYS	SYS	SYS	 X 	NODE	NODE	NODE				
+NIC5	SYS	SYS	SYS	SYS	SYS	NODE	 X 	NODE	NODE				
+NIC6	SYS	SYS	SYS	SYS	SYS	NODE	NODE	 X 	NODE				
+NIC7	SYS	SYS	SYS	SYS	SYS	NODE	NODE	NODE	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+  NIC1: mlx5_1
+  NIC2: mlx5_2
+  NIC3: mlx5_3
+  NIC4: mlx5_4
+  NIC5: mlx5_5
+  NIC6: mlx5_6
+  NIC7: mlx5_7
+
+Sun Apr 13 16:24:18 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.127.08             Driver Version: 550.127.08     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          Off |   00000000:1B:00.0 Off |                    0 |
+| N/A   43C    P0            132W /  700W |       1MiB /  81559MiB |      2%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Start:
+INFO 04-13 16:26:33 [__init__.py:239] Automatically detected platform cuda.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.29s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.01s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.05s/it]
+Device set to use cuda
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+--------------------------------------
+Few Shot Hate Speech Detection:
+LLM: deepseek-8B
+--------------------------------------
+Sample: 0
+hate
+Sample: 1
+not-hate
+Sample: 2
+hate
+Sample: 3
+hate
+Sample: 4
+not-hate
+Sample: 5
+hate
+Sample: 6
+hate
+Sample: 7
+hate
+Sample: 8
+not-hate
+Sample: 9
+not-hate
+Sample: 10
+hate
+Sample: 11
+not-hate
+Sample: 12
+hate
+Sample: 13
+not-hate
+Sample: 14
+hate
+Sample: 15
+hate
+Sample: 16
+not-hate
+Sample: 17
+hate
+Sample: 18
+not-hate
+Sample: 19
+not-hate
+Sample: 20
+hate
+Sample: 21
+not-hate
+Sample: 22
+not-hate
+Sample: 23
+not-hate
+Sample: 24
+not-hate
+Sample: 25
+hate
+Sample: 26
+not-hate
+Sample: 27
+not-hate
+Sample: 28
+not-hate
+Sample: 29
+not-hate
+Sample: 30
+hate
+Sample: 31
+not-hate
+Sample: 32
+not-hate
+Sample: 33
+not-hate
+Sample: 34
+not-hate
+Sample: 35
+not-hate
+Sample: 36
+not-hate
+Sample: 37
+hate
+Sample: 38
+not-hate
+Sample: 39
+hate
+Sample: 40
+not-hate
+Sample: 41
+not-hate
+Sample: 42
+not-hate
+Sample: 43
+not-hate
+Sample: 44
+not-hate
+Sample: 45
+not-hate
+Sample: 46
+not-hate
+Sample: 47
+not-hate
+Sample: 48
+not-hate
+Sample: 49
+hate
+Sample: 50
+not-hate
+Sample: 51
+hate
+Sample: 52
+not-hate
+Sample: 53
+not-hate
+Sample: 54
+hate
+Sample: 55
+not-hate
+Sample: 56
+hate
+Sample: 57
+hate
+Sample: 58
+not-hate
+Sample: 59
+hate
+Sample: 60
+not-hate
+Sample: 61
+hate
+Sample: 62
+not-hate
+Sample: 63
+not-hate
+Sample: 64
+not-hate
+Sample: 65
+hate
+Sample: 66
+not-hate
+Sample: 67
+not-hate
+Sample: 68
+not-hate
+Sample: 69
+not-hate
+Sample: 70
+hate
+Sample: 71
+hate
+Sample: 72
+not-hate
+Sample: 73
+hate
+Sample: 74
+not-hate
+Sample: 75
+not-hate
+Sample: 76
+hate
+Sample: 77
+hate
+Sample: 78
+hate
+Sample: 79
+not-hate
+Sample: 80
+not-hate
+Sample: 81
+not-hate
+Sample: 82
+not-hate
+Sample: 83
+not-hate
+Sample: 84
+not-hate
+Sample: 85
+not-hate
+Sample: 86
+hate
+Sample: 87
+not-hate
+Sample: 88
+not-hate
+Sample: 89
+hate
+Sample: 90
+hate
+Sample: 91
+hate
+Sample: 92
+hate
+Sample: 93
+hate
+Sample: 94
+not-hate
+Sample: 95
+not-hate
+Sample: 96
+hate
+Sample: 97
+not-hate
+Sample: 98
+hate
+Sample: 99
+not-hate
+Sample: 100
+hate
+Sample: 101
+not-hate
+Sample: 102
+hate
+Sample: 103
+not-hate
+Sample: 104
+hate
+Sample: 105
+not-hate
+Sample: 106
+hate
+Sample: 107
+not-hate
+Sample: 108
+not-hate
+Sample: 109
+hate
+Sample: 110
+None
+Sample: 111
+not-hate
+Sample: 112
+not-hate
+Sample: 113
+hate
+Sample: 114
+not-hate
+Sample: 115
+hate
+Sample: 116
+hate
+Sample: 117
+hate
+Sample: 118
+hate
+Sample: 119
+hate
+Sample: 120
+hate
+Sample: 121
+not-hate
+Sample: 122
+not-hate
+Sample: 123
+not-hate
+Sample: 124
+not-hate
+Sample: 125
+not-hate
+Sample: 126
+not-hate
+Sample: 127
+hate
+Sample: 128
+not-hate
+Sample: 129
+not-hate
+Sample: 130
+not-hate
+Sample: 131
+hate
+Sample: 132
+not-hate
+Sample: 133
+hate
+Sample: 134
+hate
+Sample: 135
+not-hate
+Sample: 136
+not-hate
+Sample: 137
+not-hate
+Sample: 138
+not-hate
+Sample: 139
+not-hate
+Sample: 140
+not-hate
+Sample: 141
+not-hate
+Sample: 142
+hate
+Sample: 143
+not-hate
+Sample: 144
+hate
+Sample: 145
+not-hate
+Sample: 146
+hate
+Sample: 147
+hate
+Sample: 148
+hate
+Sample: 149
+hate
+Sample: 150
+not-hate
+Sample: 151
+hate
+Sample: 152
+hate
+Sample: 153
+not-hate
+Sample: 154
+hate
+Sample: 155
+not-hate
+Sample: 156
+not-hate
+Sample: 157
+hate
+Sample: 158
+hate
+Sample: 159
+not-hate
+Sample: 160
+hate
+Sample: 161
+not-hate
+Sample: 162
+not-hate
+Sample: 163
+not-hate
+Sample: 164
+hate
+Sample: 165
+not-hate
+Sample: 166
+not-hate
+Sample: 167
+not-hate
+Sample: 168
+not-hate
+Sample: 169
+not-hate
+Sample: 170
+hate
+Sample: 171
+not-hate
+Sample: 172
+hate
+Sample: 173
+not-hate
+Sample: 174
+not-hate
+Sample: 175
+not-hate
+Sample: 176
+hate
+Sample: 177
+not-hate
+Sample: 178
+hate
+Sample: 179
+hate
+Sample: 180
+not-hate
+Sample: 181
+not-hate
+Sample: 182
+not-hate
+Sample: 183
+hate
+Sample: 184
+not-hate
+Sample: 185
+not-hate
+Sample: 186
+not-hate
+Sample: 187
+not-hate
+Sample: 188
+not-hate
+Sample: 189
+not-hate
+Sample: 190
+not-hate
+Sample: 191
+hate
+Sample: 192
+not-hate
+Sample: 193
+not-hate
+Sample: 194
+hate
+Sample: 195
+hate
+Sample: 196
+not-hate
+Sample: 197
+not-hate
+Sample: 198
+hate
+Sample: 199
+not-hate
+Sample: 200
+not-hate
+Sample: 201
+hate
+Sample: 202
+not-hate
+Sample: 203
+not-hate
+Sample: 204
+not-hate
+Sample: 205
+not-hate
+Sample: 206
+not-hate
+Sample: 207
+hate
+Sample: 208
+not-hate
+Sample: 209
+hate
+Sample: 210
+hate
+Sample: 211
+not-hate
+Sample: 212
+not-hate
+Sample: 213
+hate
+Sample: 214
+hate
+Sample: 215
+hate
+Sample: 216
+hate
+Sample: 217
+not-hate
+Sample: 218
+not-hate
+Sample: 219
+not-hate
+Sample: 220
+not-hate
+Sample: 221
+not-hate
+Sample: 222
+hate
+Sample: 223
+not-hate
+Sample: 224
+not-hate
+Sample: 225
+not-hate
+Sample: 226
+hate
+Sample: 227
+not-hate
+Sample: 228
+not-hate
+Sample: 229
+hate
+Sample: 230
+not-hate
+Sample: 231
+not-hate
+Sample: 232
+not-hate
+Sample: 233
+hate
+Sample: 234
+not-hate
+Sample: 235
+not-hate
+Sample: 236
+hate
+Sample: 237
+hate
+Sample: 238
+not-hate
+Sample: 239
+not-hate
+Sample: 240
+not-hate
+Sample: 241
+hate
+Sample: 242
+hate
+Sample: 243
+not-hate
+Sample: 244
+hate
+Sample: 245
+not-hate
+Sample: 246
+not-hate
+Sample: 247
+not-hate
+Sample: 248
+not-hate
+Sample: 249
+not-hate
+Sample: 250
+not-hate
+Sample: 251
+hate
+Sample: 252
+not-hate
+Sample: 253
+not-hate
+Sample: 254
+not-hate
+Sample: 255
+not-hate
+Sample: 256
+hate
+Sample: 257
+hate
+Sample: 258
+not-hate
+Sample: 259
+not-hate
+Sample: 260
+hate
+Sample: 261
+not-hate
+Sample: 262
+hate
+Sample: 263
+not-hate
+Sample: 264
+not-hate
+Sample: 265
+not-hate
+Sample: 266
+not-hate
+Sample: 267
+not-hate
+Sample: 268
+not-hate
+Sample: 269
+not-hate
+Sample: 270
+not-hate
+Sample: 271
+None
+Sample: 272
+hate
+Sample: 273
+not-hate
+Sample: 274
+not-hate
+Sample: 275
+not-hate
+Sample: 276
+not-hate
+Sample: 277
+hate
+Sample: 278
+hate
+Sample: 279
+not-hate
+Sample: 280
+not-hate
+Sample: 281
+not-hate
+Sample: 282
+not-hate
+Sample: 283
+not-hate
+Sample: 284
+hate
+Sample: 285
+hate
+Sample: 286
+not-hate
+Sample: 287
+not-hate
+Sample: 288
+not-hate
+Sample: 289
+not-hate
+Sample: 290
+hate
+Sample: 291
+hate
+Sample: 292
+not-hate
+Sample: 293
+not-hate
+Sample: 294
+not-hate
+Sample: 295
+not-hate
+Sample: 296
+not-hate
+Sample: 297
+not-hate
+Sample: 298
+hate
+Sample: 299
+hate
+Sample: 300
+hate
+Sample: 301
+hate
+Sample: 302
+hate
+Sample: 303
+not-hate
+Sample: 304
+hate
+Sample: 305
+hate
+Sample: 306
+not-hate
+Sample: 307
+not-hate
+Sample: 308
+hate
+Sample: 309
+hate
+Sample: 310
+not-hate
+Sample: 311
+not-hate
+Sample: 312
+not-hate
+Sample: 313
+not-hate
+Sample: 314
+not-hate
+Sample: 315
+not-hate
+Sample: 316
+hate
+Sample: 317
+not-hate
+Sample: 318
+hate
+Sample: 319
+not-hate
+Sample: 320
+not-hate
+Sample: 321
+not-hate
+Sample: 322
+not-hate
+Sample: 323
+not-hate
+Sample: 324
+hate
+Sample: 325
+not-hate
+Sample: 326
+not-hate
+Sample: 327
+not-hate
+Sample: 328
+not-hate
+Sample: 329
+not-hate
+Sample: 330
+not-hate
+Sample: 331
+hate
+Sample: 332
+not-hate
+Sample: 333
+not-hate
+Sample: 334
+not-hate
+Sample: 335
+not-hate
+Sample: 336
+not-hate
+Sample: 337
+not-hate
+Sample: 338
+hate
+Sample: 339
+hate
+Sample: 340
+not-hate
+Sample: 341
+not-hate
+Sample: 342
+not-hate
+Sample: 343
+not-hate
+Sample: 344
+hate
+Sample: 345
+not-hate
+Sample: 346
+hate
+Sample: 347
+hate
+Sample: 348
+None
+Sample: 349
+not-hate
+Sample: 350
+hate
+Sample: 351
+not-hate
+Sample: 352
+not-hate
+Sample: 353
+not-hate
+Sample: 354
+not-hate
+Sample: 355
+not-hate
+Sample: 356
+not-hate
+Sample: 357
+hate
+Sample: 358
+hate
+Sample: 359
+not-hate
+Sample: 360
+not-hate
+Sample: 361
+not-hate
+Sample: 362
+hate
+Sample: 363
+not-hate
+Sample: 364
+hate
+Sample: 365
+hate
+Sample: 366
+hate
+Sample: 367
+not-hate
+Sample: 368
+hate
+Sample: 369
+not-hate
+Sample: 370
+hate
+Sample: 371
+not-hate
+Sample: 372
+hate
+Sample: 373
+not-hate
+Sample: 374
+not-hate
+Sample: 375
+not-hate
+Sample: 376
+not-hate
+Sample: 377
+not-hate
+Sample: 378
+hate
+Sample: 379
+hate
+Sample: 380
+not-hate
+Sample: 381
+hate
+Sample: 382
+not-hate
+Sample: 383
+not-hate
+Sample: 384
+hate
+Sample: 385
+hate
+Sample: 386
+hate
+Sample: 387
+not-hate
+Sample: 388
+hate
+Sample: 389
+not-hate
+Sample: 390
+not-hate
+Sample: 391
+not-hate
+Sample: 392
+not-hate
+Sample: 393
+not-hate
+Sample: 394
+not-hate
+Sample: 395
+not-hate
+Sample: 396
+not-hate
+Sample: 397
+not-hate
+Sample: 398
+not-hate
+Sample: 399
+hate
+Sample: 400
+not-hate
+Sample: 401
+not-hate
+Sample: 402
+hate
+Sample: 403
+not-hate
+Sample: 404
+hate
+Sample: 405
+not-hate
+Sample: 406
+not-hate
+Sample: 407
+hate
+Sample: 408
+not-hate
+Sample: 409
+not-hate
+Sample: 410
+not-hate
+Sample: 411
+not-hate
+Sample: 412
+hate
+Sample: 413
+not-hate
+Sample: 414
+not-hate
+Sample: 415
+hate
+Sample: 416
+not-hate
+Sample: 417
+not-hate
+Sample: 418
+not-hate
+Sample: 419
+hate
+Sample: 420
+not-hate
+Sample: 421
+not-hate
+Sample: 422
+hate
+Sample: 423
+not-hate
+Sample: 424
+hate
+Sample: 425
+not-hate
+Sample: 426
+hate
+Sample: 427
+not-hate
+Sample: 428
+not-hate
+Sample: 429
+hate
+Sample: 430
+hate
+Sample: 431
+not-hate
+Sample: 432
+not-hate
+Sample: 433
+hate
+Sample: 434
+not-hate
+Sample: 435
+not-hate
+Sample: 436
+hate
+Sample: 437
+not-hate
+Sample: 438
+hate
+Sample: 439
+hate
+Sample: 440
+not-hate
+Sample: 441
+not-hate
+Sample: 442
+hate
+Sample: 443
+not-hate
+Sample: 444
+hate
+Sample: 445
+not-hate
+Sample: 446
+not-hate
+Sample: 447
+not-hate
+Sample: 448
+not-hate
+Sample: 449
+hate
+Sample: 450
+not-hate
+Sample: 451
+not-hate
+Sample: 452
+not-hate
+Sample: 453
+not-hate
+Sample: 454
+not-hate
+Sample: 455
+hate
+Sample: 456
+hate
+Sample: 457
+not-hate
+Sample: 458
+hate
+Sample: 459
+not-hate
+Sample: 460
+not-hate
+Sample: 461
+not-hate
+Sample: 462
+not-hate
+Sample: 463
+hate
+Sample: 464
+hate
+Sample: 465
+not-hate
+Sample: 466
+not-hate
+Sample: 467
+not-hate
+Sample: 468
+hate
+Sample: 469
+not-hate
+Sample: 470
+hate
+Sample: 471
+not-hate
+Sample: 472
+hate
+Sample: 473
+not-hate
+Sample: 474
+not-hate
+Sample: 475
+not-hate
+Sample: 476
+not-hate
+Sample: 477
+hate
+Sample: 478
+not-hate
+Sample: 479
+not-hate
+Sample: 480
+not-hate
+Sample: 481
+hate
+Sample: 482
+not-hate
+Sample: 483
+not-hate
+Sample: 484
+hate
+Sample: 485
+not-hate
+Sample: 486
+not-hate
+Sample: 487
+not-hate
+Sample: 488
+hate
+Sample: 489
+not-hate
+Sample: 490
+not-hate
+Sample: 491
+not-hate
+Sample: 492
+not-hate
+Sample: 493
+not-hate
+Sample: 494
+not-hate
+Sample: 495
+not-hate
+Sample: 496
+not-hate
+Sample: 497
+not-hate
+Sample: 498
+not-hate
+Sample: 499
+hate
+Sample: 500
+not-hate
+Sample: 501
+hate
+Sample: 502
+not-hate
+Sample: 503
+hate
+Sample: 504
+hate
+Sample: 505
+hate
+Sample: 506
+hate
+Sample: 507
+not-hate
+Sample: 508
+hate
+Sample: 509
+not-hate
+Sample: 510
+hate
+Sample: 511
+hate
+Sample: 512
+not-hate
+Sample: 513
+hate
+Sample: 514
+hate
+Sample: 515
+not-hate
+Sample: 516
+hate
+Sample: 517
+not-hate
+Sample: 518
+hate
+Sample: 519
+not-hate
+Sample: 520
+not-hate
+Sample: 521
+hate
+Sample: 522
+not-hate
+Sample: 523
+hate
+Sample: 524
+hate
+Sample: 525
+not-hate
+Sample: 526
+not-hate
+Sample: 527
+hate
+Sample: 528
+not-hate
+Sample: 529
+not-hate
+Sample: 530
+hate
+Sample: 531
+not-hate
+Sample: 532
+hate
+Sample: 533
+not-hate
+Sample: 534
+not-hate
+Sample: 535
+not-hate
+Sample: 536
+not-hate
+Sample: 537
+not-hate
+Sample: 538
+not-hate
+Sample: 539
+not-hate
+Sample: 540
+not-hate
+Sample: 541
+not-hate
+Sample: 542
+not-hate
+Sample: 543
+not-hate
+Sample: 544
+hate
+Sample: 545
+hate
+Sample: 546
+hate
+Sample: 547
+hate
+Sample: 548
+hate
+Sample: 549
+not-hate
+Sample: 550
+not-hate
+Sample: 551
+not-hate
+Sample: 552
+not-hate
+Sample: 553
+not-hate
+Sample: 554
+not-hate
+Sample: 555
+not-hate
+Sample: 556
+not-hate
+Sample: 557
+not-hate
+Sample: 558
+not-hate
+Sample: 559
+hate
+Sample: 560
+hate
+Sample: 561
+hate
+Sample: 562
+hate
+Sample: 563
+hate
+Sample: 564
+not-hate
+Sample: 565
+not-hate
+Sample: 566
+not-hate
+Sample: 567
+not-hate
+Sample: 568
+not-hate
+Sample: 569
+not-hate
+Sample: 570
+not-hate
+Sample: 571
+not-hate
+Sample: 572
+hate
+Sample: 573
+not-hate
+Sample: 574
+not-hate
+Sample: 575
+not-hate
+Sample: 576
+not-hate
+Sample: 577
+not-hate
+Sample: 578
+not-hate
+Sample: 579
+not-hate
+Sample: 580
+hate
+Sample: 581
+not-hate
+Sample: 582
+not-hate
+Sample: 583
+hate
+Sample: 584
+hate
+Sample: 585
+not-hate
+Sample: 586
+hate
+Sample: 587
+not-hate
+Sample: 588
+not-hate
+Sample: 589
+not-hate
+Sample: 590
+not-hate
+Sample: 591
+hate
+Sample: 592
+hate
+Sample: 593
+hate
+Sample: 594
+hate
+Sample: 595
+not-hate
+Sample: 596
+not-hate
+Sample: 597
+hate
+Sample: 598
+None
+Sample: 599
+hate
+Sample: 600
+not-hate
+Sample: 601
+not-hate
+Sample: 602
+not-hate
+Sample: 603
+hate
+Sample: 604
+not-hate
+Sample: 605
+not-hate
+Sample: 606
+not-hate
+Sample: 607
+not-hate
+Sample: 608
+hate
+Sample: 609
+not-hate
+Sample: 610
+not-hate
+Sample: 611
+not-hate
+Sample: 612
+hate
+Sample: 613
+not-hate
+Sample: 614
+hate
+Sample: 615
+not-hate
+Sample: 616
+not-hate
+Sample: 617
+not-hate
+Sample: 618
+not-hate
+Sample: 619
+not-hate
+Sample: 620
+hate
+Sample: 621
+not-hate
+Sample: 622
+not-hate
+Sample: 623
+not-hate
+Sample: 624
+not-hate
+Sample: 625
+not-hate
+Sample: 626
+not-hate
+Sample: 627
+hate
+Sample: 628
+not-hate
+Sample: 629
+hate
+Sample: 630
+hate
+Sample: 631
+not-hate
+Sample: 632
+not-hate
+Sample: 633
+not-hate
+Sample: 634
+hate
+Sample: 635
+not-hate
+Sample: 636
+not-hate
+Sample: 637
+not-hate
+Sample: 638
+not-hate
+Sample: 639
+hate
+Sample: 640
+not-hate
+Sample: 641
+not-hate
+Sample: 642
+hate
+Sample: 643
+not-hate
+Sample: 644
+not-hate
+Sample: 645
+not-hate
+Sample: 646
+hate
+Sample: 647
+hate
+Sample: 648
+not-hate
+Sample: 649
+not-hate
+Sample: 650
+not-hate
+Sample: 651
+not-hate
+Sample: 652
+not-hate
+Sample: 653
+not-hate
+Sample: 654
+not-hate
+Sample: 655
+hate
+Sample: 656
+hate
+Sample: 657
+not-hate
+Sample: 658
+not-hate
+Sample: 659
+not-hate
+Sample: 660
+hate
+Sample: 661
+not-hate
+Sample: 662
+not-hate
+Sample: 663
+not-hate
+Sample: 664
+not-hate
+Sample: 665
+not-hate
+Sample: 666
+not-hate
+Sample: 667
+not-hate
+Sample: 668
+not-hate
+Sample: 669
+hate
+Sample: 670
+hate
+Sample: 671
+not-hate
+Sample: 672
+hate
+Sample: 673
+hate
+Sample: 674
+not-hate
+Sample: 675
+not-hate
+Sample: 676
+not-hate
+Sample: 677
+not-hate
+Sample: 678
+hate
+Sample: 679
+not-hate
+Sample: 680
+not-hate
+Sample: 681
+not-hate
+Sample: 682
+not-hate
+Sample: 683
+not-hate
+Sample: 684
+not-hate
+Sample: 685
+None
+Sample: 686
+hate
+Sample: 687
+not-hate
+Sample: 688
+not-hate
+Sample: 689
+not-hate
+Sample: 690
+hate
+Sample: 691
+not-hate
+Sample: 692
+hate
+Sample: 693
+not-hate
+Sample: 694
+not-hate
+Sample: 695
+hate
+Sample: 696
+not-hate
+Sample: 697
+not-hate
+Sample: 698
+not-hate
+Sample: 699
+not-hate
+Sample: 700
+hate
+Sample: 701
+not-hate
+Sample: 702
+hate
+Sample: 703
+not-hate
+Sample: 704
+not-hate
+Sample: 705
+not-hate
+Sample: 706
+hate
+Sample: 707
+None
+Sample: 708
+not-hate
+Sample: 709
+hate
+Sample: 710
+hate
+Sample: 711
+hate
+Sample: 712
+hate
+Sample: 713
+not-hate
+Sample: 714
+hate
+Sample: 715
+not-hate
+Sample: 716
+hate
+Sample: 717
+not-hate
+Sample: 718
+not-hate
+Sample: 719
+not-hate
+Sample: 720
+not-hate
+Sample: 721
+not-hate
+Sample: 722
+not-hate
+Sample: 723
+hate
+Sample: 724
+not-hate
+Sample: 725
+not-hate
+Sample: 726
+not-hate
+Sample: 727
+not-hate
+Sample: 728
+not-hate
+Sample: 729
+not-hate
+Sample: 730
+not-hate
+Sample: 731
+not-hate
+Sample: 732
+hate
+Sample: 733
+hate
+Sample: 734
+not-hate
+Sample: 735
+hate
+Sample: 736
+hate
+Sample: 737
+not-hate
+Sample: 738
+hate
+Sample: 739
+not-hate
+Sample: 740
+hate
+Sample: 741
+not-hate
+Sample: 742
+not-hate
+Sample: 743
+hate
+Sample: 744
+not-hate
+Sample: 745
+hate
+Sample: 746
+not-hate
+Sample: 747
+hate
+Sample: 748
+hate
+Sample: 749
+hate
+Sample: 750
+not-hate
+Sample: 751
+hate
+Sample: 752
+not-hate
+Sample: 753
+not-hate
+Sample: 754
+not-hate
+Sample: 755
+not-hate
+Sample: 756
+hate
+Sample: 757
+hate
+Sample: 758
+not-hate
+Sample: 759
+not-hate
+Sample: 760
+not-hate
+Sample: 761
+not-hate
+Sample: 762
+not-hate
+Sample: 763
+hate
+Sample: 764
+hate
+Sample: 765
+hate
+Sample: 766
+not-hate
+Sample: 767
+not-hate
+Sample: 768
+hate
+Sample: 769
+not-hate
+Sample: 770
+not-hate
+Sample: 771
+hate
+Sample: 772
+not-hate
+Sample: 773
+hate
+Sample: 774
+not-hate
+Sample: 775
+not-hate
+Sample: 776
+hate
+Sample: 777
+hate
+Sample: 778
+None
+Sample: 779
+hate
+Sample: 780
+not-hate
+Sample: 781
+not-hate
+Sample: 782
+not-hate
+Sample: 783
+not-hate
+Sample: 784
+not-hate
+Sample: 785
+not-hate
+Sample: 786
+hate
+Sample: 787
+not-hate
+Sample: 788
+not-hate
+Sample: 789
+not-hate
+Sample: 790
+hate
+Sample: 791
+not-hate
+Sample: 792
+not-hate
+Sample: 793
+not-hate
+Sample: 794
+not-hate
+Sample: 795
+hate
+Sample: 796
+hate
+Sample: 797
+not-hate
+Sample: 798
+not-hate
+Sample: 799
+hate
+Sample: 800
+hate
+Sample: 801
+not-hate
+Sample: 802
+not-hate
+Sample: 803
+hate
+Sample: 804
+hate
+Sample: 805
+hate
+Sample: 806
+not-hate
+Sample: 807
+not-hate
+Sample: 808
+hate
+Sample: 809
+not-hate
+Sample: 810
+not-hate
+Sample: 811
+hate
+Sample: 812
+hate
+Sample: 813
+hate
+Sample: 814
+hate
+Sample: 815
+not-hate
+Sample: 816
+hate
+Sample: 817
+hate
+Sample: 818
+not-hate
+Sample: 819
+not-hate
+Sample: 820
+hate
+Sample: 821
+not-hate
+Sample: 822
+not-hate
+Sample: 823
+not-hate
+Sample: 824
+not-hate
+Sample: 825
+None
+Sample: 826
+not-hate
+Sample: 827
+not-hate
+Sample: 828
+hate
+Sample: 829
+hate
+Sample: 830
+not-hate
+Sample: 831
+hate
+Sample: 832
+hate
+Sample: 833
+hate
+Sample: 834
+not-hate
+Sample: 835
+hate
+Sample: 836
+not-hate
+Sample: 837
+hate
+Sample: 838
+hate
+Sample: 839
+not-hate
+Sample: 840
+not-hate
+Sample: 841
+not-hate
+Sample: 842
+hate
+Sample: 843
+not-hate
+Sample: 844
+not-hate
+Sample: 845
+not-hate
+Sample: 846
+hate
+Sample: 847
+not-hate
+Sample: 848
+not-hate
+Sample: 849
+not-hate
+Sample: 850
+not-hate
+Sample: 851
+not-hate
+Sample: 852
+not-hate
+Sample: 853
+not-hate
+Sample: 854
+hate
+Sample: 855
+hate
+Sample: 856
+not-hate
+Sample: 857
+not-hate
+Sample: 858
+not-hate
+Sample: 859
+hate
+Sample: 860
+hate
+Sample: 861
+not-hate
+Sample: 862
+not-hate
+Sample: 863
+not-hate
+Sample: 864
+not-hate
+Sample: 865
+not-hate
+Sample: 866
+not-hate
+Sample: 867
+hate
+Sample: 868
+hate
+Sample: 869
+not-hate
+Sample: 870
+hate
+Sample: 871
+not-hate
+Sample: 872
+not-hate
+Sample: 873
+not-hate
+Sample: 874
+hate
+Sample: 875
+not-hate
+Sample: 876
+not-hate
+Sample: 877
+hate
+Sample: 878
+not-hate
+Sample: 879
+hate
+Sample: 880
+not-hate
+Sample: 881
+not-hate
+Sample: 882
+not-hate
+Sample: 883
+not-hate
+Sample: 884
+hate
+Sample: 885
+not-hate
+Sample: 886
+hate
+Sample: 887
+not-hate
+Sample: 888
+not-hate
+Sample: 889
+not-hate
+Sample: 890
+hate
+Sample: 891
+hate
+Sample: 892
+hate
+Sample: 893
+not-hate
+Sample: 894
+hate
+Sample: 895
+not-hate
+Sample: 896
+not-hate
+Sample: 897
+not-hate
+Sample: 898
+not-hate
+Sample: 899
+hate
+Sample: 900
+not-hate
+Sample: 901
+not-hate
+Sample: 902
+not-hate
+Sample: 903
+not-hate
+Sample: 904
+not-hate
+Sample: 905
+hate
+Sample: 906
+hate
+Sample: 907
+not-hate
+Sample: 908
+hate
+Sample: 909
+not-hate
+Sample: 910
+not-hate
+Sample: 911
+not-hate
+Sample: 912
+not-hate
+Sample: 913
+hate
+Sample: 914
+not-hate
+Sample: 915
+not-hate
+Sample: 916
+hate
+Sample: 917
+hate
+Sample: 918
+hate
+Sample: 919
+not-hate
+Sample: 920
+not-hate
+Sample: 921
+not-hate
+Sample: 922
+not-hate
+Sample: 923
+hate
+Sample: 924
+not-hate
+Sample: 925
+not-hate
+Sample: 926
+not-hate
+Sample: 927
+hate
+Sample: 928
+not-hate
+Sample: 929
+not-hate
+Sample: 930
+hate
+Sample: 931
+not-hate
+Sample: 932
+hate
+Sample: 933
+not-hate
+Sample: 934
+not-hate
+Sample: 935
+not-hate
+Sample: 936
+not-hate
+Sample: 937
+not-hate
+Sample: 938
+not-hate
+Sample: 939
+None
+Sample: 940
+not-hate
+Sample: 941
+hate
+Sample: 942
+hate
+Sample: 943
+not-hate
+Sample: 944
+not-hate
+Sample: 945
+hate
+Sample: 946
+hate
+Sample: 947
+hate
+Sample: 948
+not-hate
+Sample: 949
+not-hate
+Sample: 950
+hate
+Sample: 951
+hate
+Sample: 952
+not-hate
+Sample: 953
+hate
+Sample: 954
+hate
+Sample: 955
+None
+Sample: 956
+not-hate
+Sample: 957
+not-hate
+Sample: 958
+hate
+Sample: 959
+not-hate
+Sample: 960
+not-hate
+Sample: 961
+not-hate
+Sample: 962
+not-hate
+Sample: 963
+not-hate
+Sample: 964
+hate
+Sample: 965
+not-hate
+Sample: 966
+hate
+Sample: 967
+hate
+Sample: 968
+not-hate
+Sample: 969
+not-hate
+Sample: 970
+not-hate
+Sample: 971
+not-hate
+Sample: 972
+not-hate
+Sample: 973
+not-hate
+Sample: 974
+not-hate
+Sample: 975
+not-hate
+Sample: 976
+not-hate
+Sample: 977
+hate
+Sample: 978
+not-hate
+Sample: 979
+not-hate
+Sample: 980
+hate
+Sample: 981
+hate
+Sample: 982
+hate
+Sample: 983
+not-hate
+Sample: 984
+not-hate
+Sample: 985
+not-hate
+Sample: 986
+not-hate
+Sample: 987
+not-hate
+Sample: 988
+not-hate
+Sample: 989
+not-hate
+Sample: 990
+hate
+Sample: 991
+hate
+Sample: 992
+not-hate
+Sample: 993
+not-hate
+Sample: 994
+hate
+Sample: 995
+not-hate
+Sample: 996
+not-hate
+Sample: 997
+hate
+Sample: 998
+hate
+Sample: 999
+not-hate
+
+real	204m24.348s
+user	116m43.396s
+sys	0m19.537s
+
+Ending script...
+Sun Apr 13 19:48:43 EDT 2025

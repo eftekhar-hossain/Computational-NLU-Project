@@ -1,0 +1,1328 @@
+Fri Apr 11 00:14:47 EDT 2025
+Slurm nodes: evc101
+You were assigned 1 gpu(s)
+
+Currently Loaded Modules:
+  1) anaconda/anaconda-2023.09   2) cuda/cuda-12.4.0
+
+ 
+
+	[4mGPU0	NIC0	NIC1	NIC2	NIC3	NIC4	NIC5	NIC6	NIC7	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	SYS	SYS	SYS	SYS	NODE	PIX	NODE	NODE	5,69	1		N/A
+NIC0	SYS	 X 	NODE	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC1	SYS	NODE	 X 	NODE	NODE	SYS	SYS	SYS	SYS				
+NIC2	SYS	NODE	NODE	 X 	NODE	SYS	SYS	SYS	SYS				
+NIC3	SYS	NODE	NODE	NODE	 X 	SYS	SYS	SYS	SYS				
+NIC4	NODE	SYS	SYS	SYS	SYS	 X 	NODE	NODE	NODE				
+NIC5	PIX	SYS	SYS	SYS	SYS	NODE	 X 	NODE	NODE				
+NIC6	NODE	SYS	SYS	SYS	SYS	NODE	NODE	 X 	NODE				
+NIC7	NODE	SYS	SYS	SYS	SYS	NODE	NODE	NODE	 X 				
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+NIC Legend:
+
+  NIC0: mlx5_0
+  NIC1: mlx5_1
+  NIC2: mlx5_2
+  NIC3: mlx5_3
+  NIC4: mlx5_4
+  NIC5: mlx5_5
+  NIC6: mlx5_6
+  NIC7: mlx5_7
+
+Fri Apr 11 00:14:53 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.127.08             Driver Version: 550.127.08     CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 80GB HBM3          Off |   00000000:C1:00.0 Off |                    0 |
+| N/A   28C    P0            121W /  700W |       1MiB /  81559MiB |      3%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+Start:
+INFO 04-11 00:18:54 [__init__.py:239] Automatically detected platform cuda.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.28s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.02it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.03s/it]
+Device set to use cuda
+You seem to be using the pipelines sequentially on GPU. In order to maximize efficiency please use a dataset
+--------------------------------------
+Zero Shot Emotion Recognition:
+LLM: deepseek-8B
+--------------------------------------
+Sample: 0
+joy
+Sample: 1
+joy
+Sample: 2
+anger
+Sample: 3
+joy
+Sample: 4
+anger
+Sample: 5
+sadness
+Sample: 6
+None
+Sample: 7
+fear
+Sample: 8
+surprise
+Sample: 9
+fear
+Sample: 10
+anger
+Sample: 11
+sadness
+Sample: 12
+joy
+Sample: 13
+joy
+Sample: 14
+disgust
+Sample: 15
+anger
+Sample: 16
+sadness
+Sample: 17
+anger
+Sample: 18
+disgust
+Sample: 19
+anger
+Sample: 20
+fear
+Sample: 21
+sadness
+Sample: 22
+joy
+Sample: 23
+sadness
+Sample: 24
+sadness
+Sample: 25
+fear
+Sample: 26
+sadness
+Sample: 27
+fear
+Sample: 28
+joy
+Sample: 29
+joy
+Sample: 30
+sadness
+Sample: 31
+fear
+Sample: 32
+surprise
+Sample: 33
+anger
+Sample: 34
+sadness
+Sample: 35
+joy
+Sample: 36
+surprise
+Sample: 37
+sadness
+Sample: 38
+joy
+Sample: 39
+sadness
+Sample: 40
+sadness
+Sample: 41
+disgust
+Sample: 42
+anger
+Sample: 43
+sadness
+Sample: 44
+anger
+Sample: 45
+sadness
+Sample: 46
+sadness
+Sample: 47
+fear
+Sample: 48
+joy
+Sample: 49
+joy
+Sample: 50
+anger
+Sample: 51
+joy
+Sample: 52
+fear
+Sample: 53
+sadness
+Sample: 54
+fear
+Sample: 55
+None
+Sample: 56
+joy
+Sample: 57
+joy
+Sample: 58
+joy
+Sample: 59
+sadness
+Sample: 60
+surprise
+Sample: 61
+joy
+Sample: 62
+disgust
+Sample: 63
+joy
+Sample: 64
+None
+Sample: 65
+fear
+Sample: 66
+None
+Sample: 67
+joy
+Sample: 68
+joy
+Sample: 69
+sadness
+Sample: 70
+fear
+Sample: 71
+fear
+Sample: 72
+None
+Sample: 73
+sadness
+Sample: 74
+anger
+Sample: 75
+fear
+Sample: 76
+sadness
+Sample: 77
+surprise
+Sample: 78
+sadness
+Sample: 79
+sadness
+Sample: 80
+sadness
+Sample: 81
+sadness
+Sample: 82
+joy
+Sample: 83
+None
+Sample: 84
+sadness
+Sample: 85
+joy
+Sample: 86
+surprise
+Sample: 87
+sadness
+Sample: 88
+joy
+Sample: 89
+joy
+Sample: 90
+joy
+Sample: 91
+anger
+Sample: 92
+joy
+Sample: 93
+sadness
+Sample: 94
+sadness
+Sample: 95
+sadness
+Sample: 96
+joy
+Sample: 97
+fear
+Sample: 98
+joy
+Sample: 99
+joy
+Sample: 100
+sadness
+Sample: 101
+fear
+Sample: 102
+joy
+Sample: 103
+sadness
+Sample: 104
+None
+Sample: 105
+joy
+Sample: 106
+sadness
+Sample: 107
+sadness
+Sample: 108
+joy
+Sample: 109
+fear
+Sample: 110
+joy
+Sample: 111
+sadness
+Sample: 112
+joy
+Sample: 113
+joy
+Sample: 114
+sadness
+Sample: 115
+anger
+Sample: 116
+joy
+Sample: 117
+fear
+Sample: 118
+joy
+Sample: 119
+surprise
+Sample: 120
+fear
+Sample: 121
+joy
+Sample: 122
+surprise
+Sample: 123
+joy
+Sample: 124
+sadness
+Sample: 125
+sadness
+Sample: 126
+sadness
+Sample: 127
+fear
+Sample: 128
+joy
+Sample: 129
+fear
+Sample: 130
+fear
+Sample: 131
+joy
+Sample: 132
+sadness
+Sample: 133
+disgust
+Sample: 134
+fear
+Sample: 135
+fear
+Sample: 136
+sadness
+Sample: 137
+surprise
+Sample: 138
+sadness
+Sample: 139
+sadness
+Sample: 140
+None
+Sample: 141
+joy
+Sample: 142
+joy
+Sample: 143
+anger
+Sample: 144
+surprise
+Sample: 145
+sadness
+Sample: 146
+joy
+Sample: 147
+disgust
+Sample: 148
+sadness
+Sample: 149
+joy
+Sample: 150
+anger
+Sample: 151
+joy
+Sample: 152
+joy
+Sample: 153
+fear
+Sample: 154
+joy
+Sample: 155
+surprise
+Sample: 156
+None
+Sample: 157
+anger
+Sample: 158
+joy
+Sample: 159
+joy
+Sample: 160
+sadness
+Sample: 161
+fear
+Sample: 162
+sadness
+Sample: 163
+disgust
+Sample: 164
+sadness
+Sample: 165
+None
+Sample: 166
+fear
+Sample: 167
+joy
+Sample: 168
+joy
+Sample: 169
+sadness
+Sample: 170
+joy
+Sample: 171
+sadness
+Sample: 172
+sadness
+Sample: 173
+fear
+Sample: 174
+disgust
+Sample: 175
+joy
+Sample: 176
+joy
+Sample: 177
+sadness
+Sample: 178
+sadness
+Sample: 179
+sadness
+Sample: 180
+sadness
+Sample: 181
+joy
+Sample: 182
+anger
+Sample: 183
+joy
+Sample: 184
+sadness
+Sample: 185
+fear
+Sample: 186
+None
+Sample: 187
+sadness
+Sample: 188
+joy
+Sample: 189
+sadness
+Sample: 190
+sadness
+Sample: 191
+joy
+Sample: 192
+surprise
+Sample: 193
+sadness
+Sample: 194
+anger
+Sample: 195
+disgust
+Sample: 196
+sadness
+Sample: 197
+fear
+Sample: 198
+sadness
+Sample: 199
+joy
+Sample: 200
+sadness
+Sample: 201
+sadness
+Sample: 202
+joy
+Sample: 203
+sadness
+Sample: 204
+sadness
+Sample: 205
+disgust
+Sample: 206
+None
+Sample: 207
+joy
+Sample: 208
+None
+Sample: 209
+fear
+Sample: 210
+anger
+Sample: 211
+joy
+Sample: 212
+sadness
+Sample: 213
+anger
+Sample: 214
+surprise
+Sample: 215
+fear
+Sample: 216
+sadness
+Sample: 217
+joy
+Sample: 218
+sadness
+Sample: 219
+joy
+Sample: 220
+joy
+Sample: 221
+sadness
+Sample: 222
+None
+Sample: 223
+joy
+Sample: 224
+fear
+Sample: 225
+joy
+Sample: 226
+fear
+Sample: 227
+fear
+Sample: 228
+sadness
+Sample: 229
+sadness
+Sample: 230
+sadness
+Sample: 231
+sadness
+Sample: 232
+anger
+Sample: 233
+sadness
+Sample: 234
+disgust
+Sample: 235
+disgust
+Sample: 236
+joy
+Sample: 237
+surprise
+Sample: 238
+sadness
+Sample: 239
+disgust
+Sample: 240
+sadness
+Sample: 241
+joy
+Sample: 242
+sadness
+Sample: 243
+sadness
+Sample: 244
+anger
+Sample: 245
+anger
+Sample: 246
+fear
+Sample: 247
+joy
+Sample: 248
+sadness
+Sample: 249
+joy
+Sample: 250
+sadness
+Sample: 251
+sadness
+Sample: 252
+sadness
+Sample: 253
+joy
+Sample: 254
+disgust
+Sample: 255
+anger
+Sample: 256
+joy
+Sample: 257
+joy
+Sample: 258
+None
+Sample: 259
+None
+Sample: 260
+sadness
+Sample: 261
+None
+Sample: 262
+None
+Sample: 263
+sadness
+Sample: 264
+sadness
+Sample: 265
+joy
+Sample: 266
+sadness
+Sample: 267
+sadness
+Sample: 268
+sadness
+Sample: 269
+anger
+Sample: 270
+fear
+Sample: 271
+None
+Sample: 272
+None
+Sample: 273
+disgust
+Sample: 274
+None
+Sample: 275
+anger
+Sample: 276
+joy
+Sample: 277
+joy
+Sample: 278
+sadness
+Sample: 279
+surprise
+Sample: 280
+sadness
+Sample: 281
+fear
+Sample: 282
+None
+Sample: 283
+fear
+Sample: 284
+disgust
+Sample: 285
+fear
+Sample: 286
+sadness
+Sample: 287
+sadness
+Sample: 288
+sadness
+Sample: 289
+sadness
+Sample: 290
+joy
+Sample: 291
+fear
+Sample: 292
+fear
+Sample: 293
+surprise
+Sample: 294
+anger
+Sample: 295
+None
+Sample: 296
+joy
+Sample: 297
+disgust
+Sample: 298
+fear
+Sample: 299
+anger
+Sample: 300
+sadness
+Sample: 301
+anger
+Sample: 302
+joy
+Sample: 303
+None
+Sample: 304
+joy
+Sample: 305
+fear
+Sample: 306
+anger
+Sample: 307
+joy
+Sample: 308
+sadness
+Sample: 309
+sadness
+Sample: 310
+anger
+Sample: 311
+joy
+Sample: 312
+joy
+Sample: 313
+sadness
+Sample: 314
+joy
+Sample: 315
+joy
+Sample: 316
+sadness
+Sample: 317
+joy
+Sample: 318
+joy
+Sample: 319
+surprise
+Sample: 320
+anger
+Sample: 321
+joy
+Sample: 322
+None
+Sample: 323
+fear
+Sample: 324
+anger
+Sample: 325
+joy
+Sample: 326
+sadness
+Sample: 327
+sadness
+Sample: 328
+surprise
+Sample: 329
+joy
+Sample: 330
+joy
+Sample: 331
+anger
+Sample: 332
+sadness
+Sample: 333
+joy
+Sample: 334
+joy
+Sample: 335
+joy
+Sample: 336
+sadness
+Sample: 337
+surprise
+Sample: 338
+fear
+Sample: 339
+surprise
+Sample: 340
+joy
+Sample: 341
+sadness
+Sample: 342
+fear
+Sample: 343
+sadness
+Sample: 344
+joy
+Sample: 345
+joy
+Sample: 346
+anger
+Sample: 347
+joy
+Sample: 348
+joy
+Sample: 349
+fear
+Sample: 350
+sadness
+Sample: 351
+sadness
+Sample: 352
+joy
+Sample: 353
+sadness
+Sample: 354
+fear
+Sample: 355
+joy
+Sample: 356
+fear
+Sample: 357
+sadness
+Sample: 358
+None
+Sample: 359
+joy
+Sample: 360
+anger
+Sample: 361
+joy
+Sample: 362
+sadness
+Sample: 363
+sadness
+Sample: 364
+joy
+Sample: 365
+joy
+Sample: 366
+joy
+Sample: 367
+sadness
+Sample: 368
+surprise
+Sample: 369
+joy
+Sample: 370
+sadness
+Sample: 371
+anger
+Sample: 372
+anger
+Sample: 373
+anger
+Sample: 374
+fear
+Sample: 375
+fear
+Sample: 376
+anger
+Sample: 377
+sadness
+Sample: 378
+sadness
+Sample: 379
+sadness
+Sample: 380
+sadness
+Sample: 381
+anger
+Sample: 382
+sadness
+Sample: 383
+surprise
+Sample: 384
+sadness
+Sample: 385
+anger
+Sample: 386
+sadness
+Sample: 387
+sadness
+Sample: 388
+anger
+Sample: 389
+fear
+Sample: 390
+joy
+Sample: 391
+joy
+Sample: 392
+anger
+Sample: 393
+anger
+Sample: 394
+joy
+Sample: 395
+sadness
+Sample: 396
+surprise
+Sample: 397
+joy
+Sample: 398
+sadness
+Sample: 399
+disgust
+Sample: 400
+joy
+Sample: 401
+anger
+Sample: 402
+anger
+Sample: 403
+sadness
+Sample: 404
+joy
+Sample: 405
+fear
+Sample: 406
+joy
+Sample: 407
+None
+Sample: 408
+anger
+Sample: 409
+anger
+Sample: 410
+joy
+Sample: 411
+sadness
+Sample: 412
+anger
+Sample: 413
+None
+Sample: 414
+fear
+Sample: 415
+fear
+Sample: 416
+sadness
+Sample: 417
+fear
+Sample: 418
+sadness
+Sample: 419
+sadness
+Sample: 420
+joy
+Sample: 421
+anger
+Sample: 422
+sadness
+Sample: 423
+sadness
+Sample: 424
+disgust
+Sample: 425
+joy
+Sample: 426
+fear
+Sample: 427
+anger
+Sample: 428
+joy
+Sample: 429
+fear
+Sample: 430
+anger
+Sample: 431
+anger
+Sample: 432
+sadness
+Sample: 433
+sadness
+Sample: 434
+anger
+Sample: 435
+fear
+Sample: 436
+joy
+Sample: 437
+joy
+Sample: 438
+joy
+Sample: 439
+sadness
+Sample: 440
+sadness
+Sample: 441
+sadness
+Sample: 442
+sadness
+Sample: 443
+joy
+Sample: 444
+sadness
+Sample: 445
+sadness
+Sample: 446
+disgust
+Sample: 447
+disgust
+Sample: 448
+sadness
+Sample: 449
+joy
+Sample: 450
+anger
+Sample: 451
+None
+Sample: 452
+sadness
+Sample: 453
+sadness
+Sample: 454
+sadness
+Sample: 455
+joy
+Sample: 456
+None
+Sample: 457
+fear
+Sample: 458
+sadness
+Sample: 459
+fear
+Sample: 460
+sadness
+Sample: 461
+disgust
+Sample: 462
+sadness
+Sample: 463
+None
+Sample: 464
+sadness
+Sample: 465
+None
+Sample: 466
+None
+Sample: 467
+joy
+Sample: 468
+fear
+Sample: 469
+joy
+Sample: 470
+fear
+Sample: 471
+sadness
+Sample: 472
+joy
+Sample: 473
+fear
+Sample: 474
+disgust
+Sample: 475
+anger
+Sample: 476
+anger
+Sample: 477
+anger
+Sample: 478
+fear
+Sample: 479
+anger
+Sample: 480
+joy
+Sample: 481
+joy
+Sample: 482
+joy
+Sample: 483
+fear
+Sample: 484
+fear
+Sample: 485
+sadness
+Sample: 486
+sadness
+Sample: 487
+anger
+Sample: 488
+sadness
+Sample: 489
+sadness
+Sample: 490
+anger
+Sample: 491
+joy
+Sample: 492
+sadness
+Sample: 493
+fear
+Sample: 494
+joy
+Sample: 495
+None
+Sample: 496
+sadness
+Sample: 497
+sadness
+Sample: 498
+sadness
+Sample: 499
+sadness
+Sample: 500
+sadness
+Sample: 501
+sadness
+Sample: 502
+surprise
+Sample: 503
+anger
+Sample: 504
+joy
+Sample: 505
+sadness
+Sample: 506
+fear
+Sample: 507
+joy
+Sample: 508
+disgust
+Sample: 509
+joy
+Sample: 510
+fear
+Sample: 511
+fear
+Sample: 512
+anger
+Sample: 513
+sadness
+Sample: 514
+fear
+Sample: 515
+surprise
+Sample: 516
+disgust
+Sample: 517
+joy
+Sample: 518
+disgust
+Sample: 519
+sadness
+Sample: 520
+joy
+Sample: 521
+sadness
+Sample: 522
+sadness
+Sample: 523
+disgust
+Sample: 524
+fear
+Sample: 525
+anger
+Sample: 526
+joy
+Sample: 527
+disgust
+Sample: 528
+joy
+Sample: 529
+disgust
+Sample: 530
+sadness
+Sample: 531
+None
+Sample: 532
+anger
+Sample: 533
+surprise
+Sample: 534
+joy
+Sample: 535
+fear
+Sample: 536
+sadness
+Sample: 537
+None
+Sample: 538
+joy
+Sample: 539
+sadness
+Sample: 540
+joy
+Sample: 541
+sadness
+Sample: 542
+None
+Sample: 543
+None
+Sample: 544
+joy
+Sample: 545
+sadness
+Sample: 546
+joy
+Sample: 547
+fear
+Sample: 548
+sadness
+Sample: 549
+sadness
+Sample: 550
+sadness
+Sample: 551
+sadness
+Sample: 552
+sadness
+Sample: 553
+joy
+Sample: 554
+sadness
+Sample: 555
+sadness
+Sample: 556
+sadness
+Sample: 557
+sadness
+Sample: 558
+joy
+Sample: 559
+fear
+Sample: 560
+sadness
+Sample: 561
+joy
+Sample: 562
+joy
+Sample: 563
+fear
+Sample: 564
+joy
+Sample: 565
+anger
+Sample: 566
+sadness
+Sample: 567
+fear
+Sample: 568
+sadness
+Sample: 569
+joy
+Sample: 570
+sadness
+Sample: 571
+anger
+Sample: 572
+sadness
+Sample: 573
+disgust
+Sample: 574
+anger
+Sample: 575
+sadness
+Sample: 576
+None
+Sample: 577
+disgust
+Sample: 578
+anger
+Sample: 579
+sadness
+Sample: 580
+sadness
+Sample: 581
+joy
+Sample: 582
+anger
+Sample: 583
+sadness
+Sample: 584
+disgust
+Sample: 585
+anger
+Sample: 586
+fear
+Sample: 587
+None
+Sample: 588
+fear
+Sample: 589
+sadness
+Sample: 590
+sadness
+Sample: 591
+sadness
+Sample: 592
+sadness
+Sample: 593
+anger
+Sample: 594
+sadness
+Sample: 595
+sadness
+Sample: 596
+fear
+Sample: 597
+joy
+Sample: 598
+sadness
+Sample: 599
+anger
+Sample: 600
+joy
+Sample: 601
+joy
+Sample: 602
+sadness
+Sample: 603
+sadness
+Sample: 604
+joy
+Sample: 605
+disgust
+Sample: 606
+joy
+Sample: 607
+fear
+Sample: 608
+sadness
+Sample: 609
+sadness
+Sample: 610
+sadness
+Sample: 611
+joy
+Sample: 612
+disgust
+Sample: 613
+anger
+Sample: 614
+sadness
+Sample: 615
+sadness
+Sample: 616
+fear
+Sample: 617
+sadness
+Sample: 618
+sadness
+Sample: 619
+surprise
+Sample: 620
+sadness
+Sample: 621
+sadness
+Sample: 622
+fear
+Sample: 623
+sadness
+Sample: 624
+sadness
+
+real	154m15.576s
+user	94m46.055s
+sys	0m19.174s
+
+Ending script...
+Fri Apr 11 02:49:09 EDT 2025

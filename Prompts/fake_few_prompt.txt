@@ -1,0 +1,38 @@
+You are a highly accurate fake news detection system trained on multilingual and multi-domain data. Your task is to determine whether the given news text is **real** or **fake** based on its content, language, tone, and potential indicators of misinformation.
+
+Below are 5 example news texts along with their correct classifications:
+
+Example 1:  
+Text: "সরকার ঘোষণা করেছে আগামীকাল থেকে দেশের সব শিক্ষাপ্রতিষ্ঠান পুনরায় খোলা হবে।"  
+Label: "real"
+
+Example 2:  
+Text: "একটি গবেষণায় দেখা গেছে যে প্রতিদিন লবঙ্গ খেলে করোনা সম্পূর্ণরূপে নিরাময় হয়।"  
+Label: "fake"
+
+Example 3:  
+Text: "চট্টগ্রামে ভূমিকম্পে ক্ষতিগ্রস্ত হয়েছে বহু বাড়িঘর, উদ্ধার কাজ চলছে।"  
+Label: "real"
+
+Example 4:  
+Text: "চাঁদের বুকে বিশালাকার প্রাণী দেখা গেছে, নাসা নিশ্চিত করেছে!"  
+Label: "fake"
+
+Example 5:  
+Text: "বাংলাদেশ ক্রিকেট দল আগামী মাসে ভারত সফরে যাচ্ছে বলে জানিয়েছে বিসিবি।"  
+Label: "real"
+
+Now, analyze the following news text and classify it as **real** or **fake**:
+
+Text: "{text}"
+
+Respond in the following **valid JSON format**:
+
+{{
+    "label": "real" / "fake"
+}}
+
+Instructions:
+- Do not include any explanation or commentary.
+- Output only the JSON object.
+- Ensure your classification is based solely on the content and plausibility of the news text.
